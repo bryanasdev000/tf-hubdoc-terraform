@@ -1,0 +1,65 @@
+
+@font-face {
+    font-family: Gilroy;
+    src: url('Gilroy-ExtraBold.otf');
+    src: url('Gilroy-Light.otf');
+}
+
+body {
+    background-color: rgb(203, 181, 253);
+    max-width: 100%;
+    font-family: Gilroy;
+    font-weight: lighter;
+}
+
+#container {
+    margin: 5%;
+    padding: 2px 16px;
+}
+
+#navbar {
+    display: flex;
+    justify-content: left;
+    margin: 8px;
+    margin-bottom: 10px;
+}
+
+p {
+    padding-left: 10px;
+}
+
+a {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#perfis {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.card {
+    /* Add shadows to create the "card" effect */
+    max-width: 400px;
+    padding:10px ;
+    margin:10px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 8px;
+    gap: 10px;
+}
+
+.card h4 {
+    margin-top: 0px;
+    padding-left: 10px;
+}
+
+.card .code {
+    font-family: monospace;
+    padding-left: 10px;
+}
+
+
