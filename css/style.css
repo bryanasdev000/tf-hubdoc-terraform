@@ -40,11 +40,11 @@ a {
     justify-content: center;
 }
 
-
 .card {
-    max-width: 490px;
-    padding:10px ;
-    margin:10px;
+    max-width: 600px;
+    padding:20px ;
+    margin:15px;
+    text-align: justify;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
@@ -57,10 +57,11 @@ a {
     padding-left: 10px;
 }
 
-.card .code {
-    font-family: monospace;
+
+.card code {
+    text-align: left;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     padding-left: 10px;
     font-size: 12px;
-}
-
+} 
 

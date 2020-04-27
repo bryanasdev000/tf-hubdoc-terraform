@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="//db.onlinewebfonts.com/c/00d5a78493aed4b11e2584ad7cceee49?family=Gilroy+ExtraBold" rel="stylesheet" type="text/css"/>
+    <link href="//db.onlinewebfonts.com/c/00d5a78493aed4b11e2584ad7cceee49?family=Gilroy+ExtraBold" rel="stylesheet"
+        type="text/css" />
     <link rel="stylesheet" href="css/style.css">
     <title>terrasheet</title>
 </head>
@@ -31,62 +32,223 @@
             <div class="card">
                 <img src="" alt="">
                 <h4>Sobre o Terraform</h4>
-                <p> 
+                <p>
                     Terraform, uma ferramenta criada pela Hashicorp em 2014, escrita em Go, tem como objetivo
                     para construir, alterar e controlar a versão de sua infraestrutura. Esta ferramenta
                     tenha uma interface de linha de comando poderosa e muito intuitiva </p>
                 <p><strong>Instalação</strong></p>
-                <p class="code">
-                    $ curl https//releases.hashicorp.com/terraform/0.12.24/terraform_0.12.24_linux_amd64.zip
-                </p>
-                <p class="code">
-                    $ sudo unzip terraform_0.12.24_linux_amd64.zip
-                    -d /usr/local/bin/
-                </p>
-                <p class="code">
-                    $ rm terraform_0.12.24_linux_amd64.zip
-                </p>
+
+                <code>$ curl https//releases.hashicorp.com/terraform/
+                    0.12.24/terraform_0.12.24_linux_amd64.zip</code>
+
+                <p>Descompacte usando:</p>
+                <code>$ sudo unzip terraform_0.12.24_linux_amd64.zip
+                    -d /usr/local/bin/</code>
+
+                <p>Delete o arquivo Compactado:</p>
+                <code>$ rm terraform_0.12.24_linux_amd64.zip</code>
+                <p></p>
                 <h4>Primeiros Comandos</h4>
                 <p><strong>Verificando a versão</strong></p>
-                <p class="code">$ terraform --version</p>
-                <p class="code">Terraform v0.12.24</p>
-
-                <p><strong>Init Terraform </strong></p> 
-                <p class="code">$ terraform init</p> 
-
-                <p>É o primeiro comando que você precisa executar. Caso não execute o terraform
-                    planejar, aplicar, destruir e importar não funcionará. O comando
-                    init terraform irá instalar : </p>
-                    <ul>
-                    <li><p>Módulos Terraform</p></li>
-                    <li><p>Eventualmente, um back-end</p></li>
-                    <li><p>Plugins dos Providers</p></li>
-                    </ul>
-
-                <p><strong>Inicie o Terraform e não peça nenhuma entrada</strong></p>
-                <p class="code"> $ terraform init -input=false</p>
-                
-                <p><strong>Alterar a configuração de back-end durante o init</strong></p>
-                <p class="code">$ terraform init -backend-config=cfg/s3.dev.tf -
-                    reconfigure</p>
-                <p> - reconfigure é usado para dizer ao terraform para não copiar o
-                    estado existente para o novo local do estado remoto.</p>
-
+                <code>$ terraform --version</code>
+                <code>Terraform v0.12.24</code>
             </div>
 
             <div class="card">
                 <img src="" alt="">
-                <h4>Teste</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nulla enim saepe, quisquam nobis accusantium necessitatibus animi explicabo labore repudiandae, soluta placeat delectus quod
-                    laudantium alias facilis totam, libero fugit.</p>
-                <h4>Instalação</h4>
+                <p><strong>apply</strong></p>
+                <p>
+                    O comando terraform apply é usado para aplicar as alterações necessárias para alcançar o estado
+                    desejado da configuração ou o conjunto predeterminado de ações geradas por um plano de execução do
+                    plano de terraform.
+                </p>
+                <code>$ terraform apply [flag] [dir-or-plan]</code>
+                <p>
+                    Por padrão, apply verifica o diretório atual da configuração e aplica as alterações adequadamente.
+                    No entanto, um caminho para outra configuração ou plano de execução pode
+                    ser fornecido. Arquivos de planos de execução explícitos podem ser usados ​​para dividir o plano e
+                    aplicar em etapas separadas nos sistemas de automação.
+                    Os flags da linha de comando são todos opcionais. A lista de flags disponíveis é:
+                </p>
+                <ul>
+                    <li>
+                        <p>
+                            <code>-backup=path</code> Caminho para o arquivo de backup. O padrão
+                            é<code>-state-out</code> com a extensão ".backup". Desativado configurando para "-".
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <code>-compact-warnings</code> Se o Terraform produzir quaisquer avisos que não sejam
+                            acompanhados de erros, mostre-os de uma forma mais compacta que inclua apenas as mensagens
+                            de resumo.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <code>-lock=true</code> Bloqueia o arquivo de estado quando o bloqueio é suportado.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <code>-lock-timeout=0s</code> Duração para tentar novamente um bloqueio de estado.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <code>-input=true</code> Solicita a entrada de variáveis, se não estiver diretamente
+                            definido.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <code>-auto-approve</code> Ignora a aprovação interativa do plano antes de aplicar.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <code>-no-color</code> Disables output with coloring.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <code>-parallelism=n</code> Limita o número de operações simultâneas à medida que o
+                            Terraform percorre o gráfico. O padrão é 10.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <code>-refresh=true</code> Atualiza o estado de cada recurso antes do planejamento e
+                            aplicação. Isso não tem efeito se um arquivo de plano for fornecido diretamente para
+                            aplicação.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <code>-state=path</code> Caminho para o arquivo de estado. O padrão é "terraform.tfstate".
+                            Ignorado quando o estado remoto é usado.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <code>-state-out=path</code> Caminho para gravar o arquivo de estado atualizado. Por padrão,
+                            o caminho -state será usado. Ignorado quando o estado remoto é usado
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <code>-target=resource</code> Um endereço de recurso para o destino. Para mais informações,
+                            consulte os documentos de segmentação do plano de terraform.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <code>-var 'foo=bar'</code> Defina uma variável na configuração do Terraform. Este flag pode
+                            ser definido várias vezes. Os valores variáveis ​​são interpretados como HCL, portanto, os
+                            valores da lista e do mapa podem ser especificados por esse flag.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <code>-var-file=foo</code> Define variáveis ​​na configuração do Terraform a partir de um
+                            arquivo variável. Se um arquivo terraform.tfvars ou qualquer arquivo .auto.tfvars estiver
+                            presente no diretório atual, eles serão carregados automaticamente. terraform.tfvars é
+                            carregado primeiro e os arquivos .auto.tfvars depois em ordem alfabética. Qualquer arquivo
+                            especificado por -var-file substitui qualquer valor configurado automaticamente a partir de
+                            arquivos no diretório de trabalho. Esta flag pode ser usada várias vezes.
+                        </p>
+                    </li>
+                </ul>
+
             </div>
         </div>
+        <div id="perfis">
+            <div class="card">
+                <img src="" alt="">
+
+                <p><strong>get</strong></p>
+                <p>
+                    Este comando é útil quando você negou alguns módulos.
+                    Portanto, quando você os edita, é necessário obter-los
+                    novamente ele baixa os módulos para o diretório .terraform
+                </p>
+                <code>$ terraform get update=true</code>
+
+                <p><strong>init</strong></p>
+                <code>$ terraform init</code>
+
+                <p>É o primeiro comando que você precisa executar. Caso não execute o terraform
+                    planejar, aplicar, destruir e importar não funcionará. O comando
+                    init terraform irá instalar : </p>
+                <ul>
+                    <li>
+                        <p>Módulos Terraform</p>
+                    </li>
+                    <li>
+                        <p>Eventualmente, um back-end</p>
+                    </li>
+                    <li>
+                        <p>Plugins dos Providers</p>
+                    </li>
+                </ul>
+
+                <p><strong>Inicie o Terraform e não peça nenhuma entrada</strong></p>
+                <code>$ terraform init -input=false</code>
+
+                <p><strong>Alterar a configuração de back-end durante o init</strong></p>
+                <code>$ terraform init -backend-config=cfg/s3.dev.tf -
+                    reconfigure</code>
+                <p> - reconfigure é usado para dizer ao terraform para não copiar o
+                    estado existente para o novo local do estado remoto.</p>
+            </div>
+        
+            <div class="card">
+                <img src="" alt="">
+
+                <p><strong>get</strong></p>
+                <p>
+                    Este comando é útil quando você negou alguns módulos.
+                    Portanto, quando você os edita, é necessário obter-los
+                    novamente ele baixa os módulos para o diretório .terraform
+                </p>
+                <code>$ terraform get update=true</code>
+
+                <p><strong>init</strong></p>
+                <code>$ terraform init</code>
+
+                <p>É o primeiro comando que você precisa executar. Caso não execute o terraform
+                    planejar, aplicar, destruir e importar não funcionará. O comando
+                    init terraform irá instalar : </p>
+                <ul>
+                    <li>
+                        <p>Módulos Terraform</p>
+                    </li>
+                    <li>
+                        <p>Eventualmente, um back-end</p>
+                    </li>
+                    <li>
+                        <p>Plugins dos Providers</p>
+                    </li>
+                </ul>
+
+                <p><strong>Inicie o Terraform e não peça nenhuma entrada</strong></p>
+                <code>$ terraform init -input=false</code>
+
+                <p><strong>Alterar a configuração de back-end durante o init</strong></p>
+                <code>$ terraform init -backend-config=cfg/s3.dev.tf -
+                    reconfigure</code>
+                <p> - reconfigure é usado para dizer ao terraform para não copiar o
+                    estado existente para o novo local do estado remoto.</p>
+            </div>
     </div>
+
+</div>
+
 
     <div id="footer">
         <img src="" alt="">
     </div>
 
 </body>
+
 </html>
