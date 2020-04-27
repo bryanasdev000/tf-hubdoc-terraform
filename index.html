@@ -35,10 +35,43 @@
                     Terraform, uma ferramenta criada pela Hashicorp em 2014, escrita em Go, tem como objetivo
                     para construir, alterar e controlar a versão de sua infraestrutura. Esta ferramenta
                     tenha uma interface de linha de comando poderosa e muito intuitiva </p>
-                <p><strong>Intalação</strong></p>
+                <p><strong>Instalação</strong></p>
                 <p class="code">
-                    https//releases.hashicorp.com/terraform/0.12.24/
-                    terraform_0.12.24_linux_amd64.zip</p>
+                    $ curl https//releases.hashicorp.com/terraform/0.12.24/terraform_0.12.24_linux_amd64.zip
+                </p>
+                <p class="code">
+                    $ sudo unzip terraform_0.12.24_linux_amd64.zip
+                    -d /usr/local/bin/
+                </p>
+                <p class="code">
+                    $ rm terraform_0.12.24_linux_amd64.zip
+                </p>
+                <h4>Primeiros Comandos</h4>
+                <p><strong>Verificando a versão</strong></p>
+                <p class="code">$ terraform --version</p>
+                <p class="code">Terraform v0.12.24</p>
+
+                <p><strong>Init Terraform </strong></p> 
+                <p class="code">$ terraform init</p> 
+
+                <p>É o primeiro comando que você precisa executar. Caso não execute o terraform
+                    planejar, aplicar, destruir e importar não funcionará. O comando
+                    init terraform irá instalar : </p>
+                    <ul>
+                    <li><p>Módulos Terraform</p></li>
+                    <li><p>Eventualmente, um back-end</p></li>
+                    <li><p>Plugins dos Providers</p></li>
+                    </ul>
+
+                <p><strong>Inicie o Terraform e não peça nenhuma entrada</strong></p>
+                <p class="code"> $ terraform init -input=false</p>
+                
+                <p><strong>Alterar a configuração de back-end durante o init</strong></p>
+                <p class="code">$ terraform init -backend-config=cfg/s3.dev.tf -
+                    reconfigure</p>
+                <p> - reconfigure é usado para dizer ao terraform para não copiar o
+                    estado existente para o novo local do estado remoto.</p>
+
             </div>
 
             <div class="card">
@@ -48,14 +81,6 @@
                     laudantium alias facilis totam, libero fugit.</p>
                 <h4>Instalação</h4>
             </div>
-
-            <div class="card">
-                <img src="" alt="">
-                <h4>Teste</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nulla enim saepe, quisquam
-                    nobis accusantium necessitatibus animi explicabo labore repudiandae, soluta placeat delectus quod
-                    laudantium alias facilis totam, libero fugit.</p>
-            </div>
         </div>
     </div>
 
@@ -64,5 +89,4 @@
     </div>
 
 </body>
-
 </html>

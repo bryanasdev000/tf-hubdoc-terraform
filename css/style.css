@@ -26,6 +26,7 @@ body {
 
 p {
     padding-left: 10px;
+    font-size: 14px;
 }
 
 a {
@@ -41,8 +42,7 @@ a {
 
 
 .card {
-    /* Add shadows to create the "card" effect */
-    max-width: 400px;
+    max-width: 490px;
     padding:10px ;
     margin:10px;
     background-color: white;
@@ -60,6 +60,7 @@ a {
 .card .code {
     font-family: monospace;
     padding-left: 10px;
+    font-size: 12px;
 }
 
 
