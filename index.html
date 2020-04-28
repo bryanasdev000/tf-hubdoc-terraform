@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="//db.onlinewebfonts.com/c/00d5a78493aed4b11e2584ad7cceee49?family=Gilroy+ExtraBold" rel="stylesheet"
-        type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Rokkitt:500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>terrasheet</title>
 </head>
@@ -17,9 +17,8 @@
 
         </div>
         <div id="navbar">
-            <div> <a href="">Sobre</a> </div>
-            <div> <a href="">Contato</a> </div>
-            <div></div>
+            <div> <a href=""> <i class="fa fa-linkedin"></i> </a></div>
+            <div> <a href="https://github.com/miltlima" target="_blank"><i class="fa fa-github-alt"></i></a></div>
         </div>
 
         <div>
@@ -33,17 +32,15 @@
                 <img src="" alt="">
                 <h4>Sobre o Terraform</h4>
                 <p>
-                    Terraform, uma ferramenta criada pela Hashicorp em 2014, escrita em Go, tem como objetivo
+                    Terraform, é uma ferramenta criada pela Hashicorp em 2014, escrita em Go, tem como objetivo
                     para construir, alterar e controlar a versão de sua infraestrutura. Esta ferramenta
                     tenha uma interface de linha de comando poderosa e muito intuitiva </p>
-                <p><strong>Instalação</strong></p>
+                <p><i class="fa fa-cube"></i><strong> Instalação</strong></p>
 
-                <code>$ curl https//releases.hashicorp.com/terraform/
-                    0.12.24/terraform_0.12.24_linux_amd64.zip</code>
+                <code>$ curl https://releases.hashicorp.com/terraform</code>
 
                 <p>Descompacte usando:</p>
-                <code>$ sudo unzip terraform_0.12.24_linux_amd64.zip
-                    -d /usr/local/bin/</code>
+                <code>$ sudo unzip terraform_0.12.24_linux_amd64.zip -d /usr/local/bin/</code>
 
                 <p>Delete o arquivo Compactado:</p>
                 <code>$ rm terraform_0.12.24_linux_amd64.zip</code>
@@ -51,7 +48,8 @@
                 <h4>Primeiros Comandos</h4>
                 <p><strong>Verificando a versão</strong></p>
                 <code>$ terraform --version</code>
-                <code>Terraform v0.12.24</code>
+                <p>Será Exibido</p>
+                <code>$ Terraform v0.12.24</code>
             </div>
 
             <div class="card">
@@ -166,53 +164,228 @@
             <div class="card">
                 <img src="" alt="">
 
-                <p><strong>get</strong></p>
+                <p><strong>console</strong></p>
                 <p>
-                    Este comando é útil quando você negou alguns módulos.
-                    Portanto, quando você os edita, é necessário obter-los
-                    novamente ele baixa os módulos para o diretório .terraform
+                    O comando <code>terraform console</code>fornece um console interativo para avaliar expressões.
                 </p>
-                <code>$ terraform get update=true</code>
+                <code>$ terraform console [options] [dir]</code>
 
-                <p><strong>init</strong></p>
-                <code>$ terraform init</code>
+                <p>Este comando fornece um console de linha de comando interativo para avaliar e experimentar
+                    expressões. Isso é útil para testar interpolações antes de usá-las em configurações e para interagir
+                    com quaisquer valores atualmente salvos no estado.
+                    Se o estado atual estiver vazio ou ainda não tiver sido criado, o console poderá ser usado para
+                    experimentar a sintaxe da expressão e as funções internas.
+                    O argumento dir especifica o diretório do módulo raiz a ser usado. Se um caminho não for
+                    especificado, o diretório de trabalho atual será usado.</p>
+                <p>
+                    As opções suportadas são:
+                    <code>-state=path</code> Caminho para um arquivo de estado local. Expressões serão avaliadas usando
+                    valores desse arquivo de estado. Se não especificado, o estado associado ao espaço de trabalho atual
+                    é usado.
+                    Você pode fechar o console com o comando exit ou pressionando Control-C ou Control-D. </p>
+            </div>
 
-                <p>É o primeiro comando que você precisa executar. Caso não execute o terraform
-                    planejar, aplicar, destruir e importar não funcionará. O comando
-                    init terraform irá instalar : </p>
+            <div class="card">
+                <img src="" alt="">
+
+                <p><strong>destroy</strong></p>
+                <p>
+                    O comando <code>terraform destroy</code>é usado para destruir a infraestrutura gerenciada pelo
+                    Terraform.
+                </p>
+                <code>$ terraform destroy [options] [dir]</code>
+
+                <p>A infraestrutura gerenciada pela Terraform será destruída. Isso pedirá confirmação antes de destruir.
+                    Este comando aceita todos os argumentos e flags que o comando apply aceita, com exceção de um
+                    argumento do arquivo de plano.
+                    Se <code>-auto-approve</code>estiver definido, a confirmação de destruição não será mostrada.
+                    O flag <code>-target</code>, em vez de afetar as "dependências", também destruirá todos os recursos
+                    que dependem do(s) destino(s) especificado(s). Para mais informações, consulte os documentos de
+                    segmentação do <code>terraform plan</code>.
+                    O comportamento de qualquer comando de <code>terraform destroy</code> pode ser visualizado a
+                    qualquer momento com um comando equivalente <code>terraform plan -destroy</code>.</p>
+                <p>
+            </div>
+
+            <div class="card">
+                <img src="" alt="">
+
+                <p><strong>fmt</strong></p>
+                <p>
+                    O comando <code>terraform fmt</code> é usado para reescrever os arquivos de configuração do
+                    Terraform para um formato e estilo canônicos. Este comando aplica um subconjunto das convenções de
+                    estilo de linguagem Terraform, juntamente com outros pequenos ajustes para facilitar a leitura.
+                    Outros comandos do Terraform que geram a configuração do Terraform produzirão arquivos de
+                    configuração em conformidade com o estilo imposto pelo <code>terraform fmt</code> , portanto, usar
+                    esse estilo em seus próprios arquivos garantirá consistência.
+                    O formato canônico pode mudar de maneiras menores entre as versões do Terraform, portanto, após a
+                    atualização do Terraform, recomendamos executar proativamente o <code>terraform fmt</code> seus
+                    módulos, juntamente com outras alterações que você estiver fazendo para adotar a nova versão.
+                </p>
+                <code>$ terraform fmt [options] [dir]</code>
+
+                <p>Por padrão, o fmt verifica o diretório atual em busca de arquivos de configuração. Se o argumento dir
+                    for fornecido, ele examinará o diretório fornecido. Se dir for um traço único (-), o fmt lerá da
+                    entrada padrão (STDIN).
+                    <p> Os flags da linha de comando são todos opcionais. A lista de flags disponíveis são:</p>
+                    <ul>
+                        <li>
+                            <p>
+                                <code>-list=false</code> Não lista os arquivos que contêm inconsistências de formatação.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <code>-write=false</code> Não sobrescreve os arquivos de entrada. (Isso está implícito
+                                com <code>-check</code> ou quando a entrada é STDIN
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <code>-diff</code> Exibir diferenças das alterações de formatação
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <code>-check</code> Verifique se a entrada está formatada. O status de saída será 0 se
+                                todas as entradas estiverem formatadas corretamente e diferentes de zero.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <code>-recursive</code> Também processa arquivos em subdiretórios. Por padrão, apenas o
+                                diretório fornecido (ou diretório atual) é processado.
+                            </p>
+                        </li>
+                    </ul>
+
+            </div>
+
+            <div class="card">
+                <img src="" alt="">
+
+                <p><strong>force-unlock</strong></p>
+                <p>
+                    Desbloqueie manualmente o estado da configuração definida.
+                    Isso não modificará sua infraestrutura. Este comando remove o bloqueio no estado para a configuração
+                    atual. O comportamento desse bloqueio depende do back-end que está sendo usado. Arquivos de estado
+                    local não podem ser desbloqueados por outro processo.
+                </p>
+                <code>$ terraform force-unlock LOCK_ID [dir]</code>
+                <p>Desbloqueie manualmente o estado da configuração definida.</p>
+                <p>Isso não modificará sua infraestrutura. Este comando remove o bloqueio no estado para a configuração
+                    atual. O comportamento desse bloqueio depende do back-end que está sendo usado. Arquivos de estado
+                    local não podem ser desbloqueados por outro processo.</p>
+                <p>Opções</p>
                 <ul>
                     <li>
-                        <p>Módulos Terraform</p>
-                    </li>
-                    <li>
-                        <p>Eventualmente, um back-end</p>
-                    </li>
-                    <li>
-                        <p>Plugins dos Providers</p>
+                        <p>
+                            <code>-force</code>Não peça entrada para confirmação de desbloqueio.
+                        </p>
                     </li>
                 </ul>
-
-                <p><strong>Inicie o Terraform e não peça nenhuma entrada</strong></p>
-                <code>$ terraform init -input=false</code>
-
-                <p><strong>Alterar a configuração de back-end durante o init</strong></p>
-                <code>$ terraform init -backend-config=cfg/s3.dev.tf -
-                    reconfigure</code>
-                <p> - reconfigure é usado para dizer ao terraform para não copiar o
-                    estado existente para o novo local do estado remoto.</p>
             </div>
-        
+
             <div class="card">
                 <img src="" alt="">
 
                 <p><strong>get</strong></p>
                 <p>
-                    Este comando é útil quando você negou alguns módulos.
-                    Portanto, quando você os edita, é necessário obter-los
-                    novamente ele baixa os módulos para o diretório .terraform
+                    O comando terraform get é usado para baixar e atualizar os módulos mencionados no módulo raiz.
                 </p>
-                <code>$ terraform get update=true</code>
+                <code>$ terraform get [option] [dir]</code>
 
+                <p>
+                    Os módulos são baixados em uma pasta local .terraform. Esta pasta não deve estar comprometida com o
+                    controle de versão. A pasta .terraform é criada em relação ao seu diretório de trabalho atual,
+                    independentemente do argumento dir fornecido para este comando.
+                </p>
+
+                <p>
+                    Se um módulo já estiver baixado e o sinalizador <code>-update</code> não estiver definido, o
+                    Terraform não fará nada. Como resultado, é seguro (e rápido) executar esse comando várias vezes.
+                </p>
+                <p>
+                    Os flags da linha de comando são todos opcionais. A lista de flags disponíveis são:
+                </p>
+                <ul>
+                    <li>
+                        <p>
+                            <code>-update</code> Se especificado, os módulos que já foram baixados serão verificados
+                            quanto a atualizações e as atualizações serão baixadas, se presentes.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <code>dir</code> Define o caminho do módulo raiz.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="card">
+                <img src="" alt="">
+
+                <p><strong>graph</strong></p>
+                <p>
+                    O comando <code>terraform graph</code>gerar uma representação visual de um plano de configuração ou execução. A saída está no formato DOT, que pode ser usado pelo GraphViz para gerar gráficos.
+                </p>
+                <code>$ terraform grapho [options] [dir]</code>
+
+                <p>
+                    Produz o gráfico de dependência visual dos recursos do Terraform de acordo com os arquivos de configuração no DIR (ou o diretório atual, se omitido).
+                </p>
+                <p>
+                    O gráfico é produzido no formato DOT. O programa típico que pode ler esse formato é o GraphViz, mas muitos serviços da web também estão disponíveis para ler esse formato.
+                </p>
+                <p>
+                    O flag -type pode ser usado para controlar o tipo de gráfico mostrado. O Terraform cria gráficos diferentes para diferentes operações. Veja as opções abaixo para a lista de tipos suportados. O tipo padrão é "plano" se uma configuração for fornecida e "aplicar" se um arquivo de plano for passado como argumento.
+                </p>
+                <p>
+                    Opções
+                </p>
+                <ul>
+                        <li>
+                            <p>
+                                <code>-draw-cycles</code> Realce quaisquer ciclos no gráfico com bordas coloridas. Isso ajuda ao diagnosticar erros de ciclo.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                               <code>-type=plan</code> Tipo de gráfico para saída. Pode ser:<code>plan, plan-destroy, apply, validate, input, refresh</code>.
+                            </p>
+                        </li>
+                    </ul>
+                <h3>Gerar images</h3>
+                <p>A saída do <code>terraform graph</code> está no formato DOT, que pode ser facilmente convertido em uma imagem usando o ponto fornecido pelo GraphViz:</p>
+                <code>$ terraform graph | dot -Tsvg > graph.svg</code>
+            </div>
+
+            <div class="card">
+                <img src="" alt="">
+
+                <p><strong>import</strong></p>
+                <p>
+                    O comando <code>terraform destroy</code>é usado para destruir a infraestrutura gerenciada pelo
+                    Terraform.
+                </p>
+                <code>$ terraform destroy [options] [dir]</code>
+
+                <p>A infraestrutura gerenciada pela Terraform será destruída. Isso pedirá confirmação antes de destruir.
+                    Este comando aceita todos os argumentos e flags que o comando apply aceita, com exceção de um
+                    argumento do arquivo de plano.
+                    Se <code>-auto-approve</code>estiver definido, a confirmação de destruição não será mostrada.
+                    O flag <code>-target</code>, em vez de afetar as "dependências", também destruirá todos os recursos
+                    que dependem do(s) destino(s) especificado(s). Para mais informações, consulte os documentos de
+                    segmentação do <code>terraform plan</code>.
+                    O comportamento de qualquer comando de <code>terraform destroy</code> pode ser visualizado a
+                    qualquer momento com um comando equivalente <code>terraform plan -destroy</code>.</p>
+                <p>
+            </div>
+
+            <div class="card">
+                <img src="" alt="">
                 <p><strong>init</strong></p>
                 <code>$ terraform init</code>
 
@@ -240,9 +413,272 @@
                 <p> - reconfigure é usado para dizer ao terraform para não copiar o
                     estado existente para o novo local do estado remoto.</p>
             </div>
-    </div>
+            
+            <div class="card">
+                <img src="" alt="">
 
-</div>
+                <p><strong>login</strong></p>
+                <p>
+                    O comando <code>terraform destroy</code>é usado para destruir a infraestrutura gerenciada pelo
+                    Terraform.
+                </p>
+                <code>$ terraform destroy [options] [dir]</code>
+
+                <p>A infraestrutura gerenciada pela Terraform será destruída. Isso pedirá confirmação antes de destruir.
+                    Este comando aceita todos os argumentos e flags que o comando apply aceita, com exceção de um
+                    argumento do arquivo de plano.
+                    Se <code>-auto-approve</code>estiver definido, a confirmação de destruição não será mostrada.
+                    O flag <code>-target</code>, em vez de afetar as "dependências", também destruirá todos os recursos
+                    que dependem do(s) destino(s) especificado(s). Para mais informações, consulte os documentos de
+                    segmentação do <code>terraform plan</code>.
+                    O comportamento de qualquer comando de <code>terraform destroy</code> pode ser visualizado a
+                    qualquer momento com um comando equivalente <code>terraform plan -destroy</code>.</p>
+                <p>
+            </div>
+
+            <div class="card">
+                <img src="" alt="">
+
+                <p><strong>logout</strong></p>
+                <p>
+                    O comando <code>terraform destroy</code>é usado para destruir a infraestrutura gerenciada pelo
+                    Terraform.
+                </p>
+                <code>$ terraform destroy [options] [dir]</code>
+
+                <p>A infraestrutura gerenciada pela Terraform será destruída. Isso pedirá confirmação antes de destruir.
+                    Este comando aceita todos os argumentos e flags que o comando apply aceita, com exceção de um
+                    argumento do arquivo de plano.
+                    Se <code>-auto-approve</code>estiver definido, a confirmação de destruição não será mostrada.
+                    O flag <code>-target</code>, em vez de afetar as "dependências", também destruirá todos os recursos
+                    que dependem do(s) destino(s) especificado(s). Para mais informações, consulte os documentos de
+                    segmentação do <code>terraform plan</code>.
+                    O comportamento de qualquer comando de <code>terraform destroy</code> pode ser visualizado a
+                    qualquer momento com um comando equivalente <code>terraform plan -destroy</code>.</p>
+                <p>
+            </div>
+
+            <div class="card">
+                <img src="" alt="">
+
+                <p><strong>output</strong></p>
+                <p>
+                    O comando <code>terraform destroy</code>é usado para destruir a infraestrutura gerenciada pelo
+                    Terraform.
+                </p>
+                <code>$ terraform destroy [options] [dir]</code>
+
+                <p>A infraestrutura gerenciada pela Terraform será destruída. Isso pedirá confirmação antes de destruir.
+                    Este comando aceita todos os argumentos e flags que o comando apply aceita, com exceção de um
+                    argumento do arquivo de plano.
+                    Se <code>-auto-approve</code>estiver definido, a confirmação de destruição não será mostrada.
+                    O flag <code>-target</code>, em vez de afetar as "dependências", também destruirá todos os recursos
+                    que dependem do(s) destino(s) especificado(s). Para mais informações, consulte os documentos de
+                    segmentação do <code>terraform plan</code>.
+                    O comportamento de qualquer comando de <code>terraform destroy</code> pode ser visualizado a
+                    qualquer momento com um comando equivalente <code>terraform plan -destroy</code>.</p>
+                <p>
+            </div>
+
+            <div class="card">
+                <img src="" alt="">
+
+                <p><strong>plan</strong></p>
+                <p>
+                    O comando <code>terraform destroy</code>é usado para destruir a infraestrutura gerenciada pelo
+                    Terraform.
+                </p>
+                <code>$ terraform destroy [options] [dir]</code>
+
+                <p>A infraestrutura gerenciada pela Terraform será destruída. Isso pedirá confirmação antes de destruir.
+                    Este comando aceita todos os argumentos e flags que o comando apply aceita, com exceção de um
+                    argumento do arquivo de plano.
+                    Se <code>-auto-approve</code>estiver definido, a confirmação de destruição não será mostrada.
+                    O flag <code>-target</code>, em vez de afetar as "dependências", também destruirá todos os recursos
+                    que dependem do(s) destino(s) especificado(s). Para mais informações, consulte os documentos de
+                    segmentação do <code>terraform plan</code>.
+                    O comportamento de qualquer comando de <code>terraform destroy</code> pode ser visualizado a
+                    qualquer momento com um comando equivalente <code>terraform plan -destroy</code>.</p>
+                <p>
+            </div>
+
+            <div class="card">
+                <img src="" alt="">
+
+                <p><strong>providers</strong></p>
+                <p>
+                    O comando <code>terraform destroy</code>é usado para destruir a infraestrutura gerenciada pelo
+                    Terraform.
+                </p>
+                <code>$ terraform destroy [options] [dir]</code>
+
+                <p>A infraestrutura gerenciada pela Terraform será destruída. Isso pedirá confirmação antes de destruir.
+                    Este comando aceita todos os argumentos e flags que o comando apply aceita, com exceção de um
+                    argumento do arquivo de plano.
+                    Se <code>-auto-approve</code>estiver definido, a confirmação de destruição não será mostrada.
+                    O flag <code>-target</code>, em vez de afetar as "dependências", também destruirá todos os recursos
+                    que dependem do(s) destino(s) especificado(s). Para mais informações, consulte os documentos de
+                    segmentação do <code>terraform plan</code>.
+                    O comportamento de qualquer comando de <code>terraform destroy</code> pode ser visualizado a
+                    qualquer momento com um comando equivalente <code>terraform plan -destroy</code>.</p>
+                <p>
+            </div>
+
+            <div class="card">
+                <img src="" alt="">
+
+                <p><strong>refresh</strong></p>
+                <p>
+                    O comando <code>terraform destroy</code>é usado para destruir a infraestrutura gerenciada pelo
+                    Terraform.
+                </p>
+                <code>$ terraform destroy [options] [dir]</code>
+
+                <p>A infraestrutura gerenciada pela Terraform será destruída. Isso pedirá confirmação antes de destruir.
+                    Este comando aceita todos os argumentos e flags que o comando apply aceita, com exceção de um
+                    argumento do arquivo de plano.
+                    Se <code>-auto-approve</code>estiver definido, a confirmação de destruição não será mostrada.
+                    O flag <code>-target</code>, em vez de afetar as "dependências", também destruirá todos os recursos
+                    que dependem do(s) destino(s) especificado(s). Para mais informações, consulte os documentos de
+                    segmentação do <code>terraform plan</code>.
+                    O comportamento de qualquer comando de <code>terraform destroy</code> pode ser visualizado a
+                    qualquer momento com um comando equivalente <code>terraform plan -destroy</code>.</p>
+                <p>
+            </div>
+
+            <div class="card">
+                <img src="" alt="">
+
+                <p><strong>show</strong></p>
+                <p>
+                    O comando <code>terraform destroy</code>é usado para destruir a infraestrutura gerenciada pelo
+                    Terraform.
+                </p>
+                <code>$ terraform destroy [options] [dir]</code>
+
+                <p>A infraestrutura gerenciada pela Terraform será destruída. Isso pedirá confirmação antes de destruir.
+                    Este comando aceita todos os argumentos e flags que o comando apply aceita, com exceção de um
+                    argumento do arquivo de plano.
+                    Se <code>-auto-approve</code>estiver definido, a confirmação de destruição não será mostrada.
+                    O flag <code>-target</code>, em vez de afetar as "dependências", também destruirá todos os recursos
+                    que dependem do(s) destino(s) especificado(s). Para mais informações, consulte os documentos de
+                    segmentação do <code>terraform plan</code>.
+                    O comportamento de qualquer comando de <code>terraform destroy</code> pode ser visualizado a
+                    qualquer momento com um comando equivalente <code>terraform plan -destroy</code>.</p>
+                <p>
+            </div>
+
+            <div class="card">
+                <img src="" alt="">
+
+                <p><strong>state</strong></p>
+                <p>
+                    O comando <code>terraform destroy</code>é usado para destruir a infraestrutura gerenciada pelo
+                    Terraform.
+                </p>
+                <code>$ terraform destroy [options] [dir]</code>
+
+                <p>A infraestrutura gerenciada pela Terraform será destruída. Isso pedirá confirmação antes de destruir.
+                    Este comando aceita todos os argumentos e flags que o comando apply aceita, com exceção de um
+                    argumento do arquivo de plano.
+                    Se <code>-auto-approve</code>estiver definido, a confirmação de destruição não será mostrada.
+                    O flag <code>-target</code>, em vez de afetar as "dependências", também destruirá todos os recursos
+                    que dependem do(s) destino(s) especificado(s). Para mais informações, consulte os documentos de
+                    segmentação do <code>terraform plan</code>.
+                    O comportamento de qualquer comando de <code>terraform destroy</code> pode ser visualizado a
+                    qualquer momento com um comando equivalente <code>terraform plan -destroy</code>.</p>
+                <p>
+            </div>
+
+            <div class="card">
+                <img src="" alt="">
+
+                <p><strong>taint</strong></p>
+                <p>
+                    O comando <code>terraform destroy</code>é usado para destruir a infraestrutura gerenciada pelo
+                    Terraform.
+                </p>
+                <code>$ terraform destroy [options] [dir]</code>
+
+                <p>A infraestrutura gerenciada pela Terraform será destruída. Isso pedirá confirmação antes de destruir.
+                    Este comando aceita todos os argumentos e flags que o comando apply aceita, com exceção de um
+                    argumento do arquivo de plano.
+                    Se <code>-auto-approve</code>estiver definido, a confirmação de destruição não será mostrada.
+                    O flag <code>-target</code>, em vez de afetar as "dependências", também destruirá todos os recursos
+                    que dependem do(s) destino(s) especificado(s). Para mais informações, consulte os documentos de
+                    segmentação do <code>terraform plan</code>.
+                    O comportamento de qualquer comando de <code>terraform destroy</code> pode ser visualizado a
+                    qualquer momento com um comando equivalente <code>terraform plan -destroy</code>.</p>
+                <p>
+            </div>
+
+            <div class="card">
+                <img src="" alt="">
+
+                <p><strong>validate</strong></p>
+                <p>
+                    O comando <code>terraform destroy</code>é usado para destruir a infraestrutura gerenciada pelo
+                    Terraform.
+                </p>
+                <code>$ terraform destroy [options] [dir]</code>
+
+                <p>A infraestrutura gerenciada pela Terraform será destruída. Isso pedirá confirmação antes de destruir.
+                    Este comando aceita todos os argumentos e flags que o comando apply aceita, com exceção de um
+                    argumento do arquivo de plano.
+                    Se <code>-auto-approve</code>estiver definido, a confirmação de destruição não será mostrada.
+                    O flag <code>-target</code>, em vez de afetar as "dependências", também destruirá todos os recursos
+                    que dependem do(s) destino(s) especificado(s). Para mais informações, consulte os documentos de
+                    segmentação do <code>terraform plan</code>.
+                    O comportamento de qualquer comando de <code>terraform destroy</code> pode ser visualizado a
+                    qualquer momento com um comando equivalente <code>terraform plan -destroy</code>.</p>
+                <p>
+            </div>
+
+            <div class="card">
+                <img src="" alt="">
+
+                <p><strong>untaint</strong></p>
+                <p>
+                    O comando <code>terraform destroy</code>é usado para destruir a infraestrutura gerenciada pelo
+                    Terraform.
+                </p>
+                <code>$ terraform destroy [options] [dir]</code>
+
+                <p>A infraestrutura gerenciada pela Terraform será destruída. Isso pedirá confirmação antes de destruir.
+                    Este comando aceita todos os argumentos e flags que o comando apply aceita, com exceção de um
+                    argumento do arquivo de plano.
+                    Se <code>-auto-approve</code>estiver definido, a confirmação de destruição não será mostrada.
+                    O flag <code>-target</code>, em vez de afetar as "dependências", também destruirá todos os recursos
+                    que dependem do(s) destino(s) especificado(s). Para mais informações, consulte os documentos de
+                    segmentação do <code>terraform plan</code>.
+                    O comportamento de qualquer comando de <code>terraform destroy</code> pode ser visualizado a
+                    qualquer momento com um comando equivalente <code>terraform plan -destroy</code>.</p>
+                <p>
+            </div>
+
+            <div class="card">
+                <img src="" alt="">
+
+                <p><strong>workspace</strong></p>
+                <p>
+                    O comando <code>terraform destroy</code>é usado para destruir a infraestrutura gerenciada pelo
+                    Terraform.
+                </p>
+                <code>$ terraform destroy [options] [dir]</code>
+
+                <p>A infraestrutura gerenciada pela Terraform será destruída. Isso pedirá confirmação antes de destruir.
+                    Este comando aceita todos os argumentos e flags que o comando apply aceita, com exceção de um
+                    argumento do arquivo de plano.
+                    Se <code>-auto-approve</code>estiver definido, a confirmação de destruição não será mostrada.
+                    O flag <code>-target</code>, em vez de afetar as "dependências", também destruirá todos os recursos
+                    que dependem do(s) destino(s) especificado(s). Para mais informações, consulte os documentos de
+                    segmentação do <code>terraform plan</code>.
+                    O comportamento de qualquer comando de <code>terraform destroy</code> pode ser visualizado a
+                    qualquer momento com um comando equivalente <code>terraform plan -destroy</code>.</p>
+                <p>
+            </div>
+        </div>
+    </div>
 
 
     <div id="footer">
