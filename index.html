@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br ">
 
 <head>
     <meta charset="UTF-8">
@@ -13,29 +13,31 @@
 
 <body>
     <div id="container">
-        <div id="logo">
-
-        </div>
-        <div id="navbar">
-            <div> <a href=""> <i class="fa fa-linkedin"></i> </a></div>
-            <div> <a href="https://github.com/miltlima" target="_blank"><i class="fa fa-github-alt"></i></a></div>
-        </div>
-
-        <div>
-            <p></p>
-            <p></p>
-            <p></p>
-        </div>
-
-        <div id="perfis">
+        <header>
+            <img src="img/logo-hubdoc.png" alt="">
+            <nav>
+                <a href=""> <i class="fa fa-linkedin"></i></a>
+                <a href="https://github.com/miltlima" target="_blank"><i class="fa fa-github-alt"></i></a>
+                <a href=""> <i class="fa fa-twitter"></i> </a>
+            </nav>
+        </header>
+        <section id="box">
             <div class="card">
-                <img src="" alt="">
-                <h4>Sobre o Terraform</h4>
+                <p>
+                    Está é uma documentação não-oficial do Terraform e foi produzida com o intuito de ajudar quem quer
+                    aprender sobre o terraform e ainda tem dificuldades com o inglês está sendo disponibilizada de forma
+                    pública e colaborativa
+                </p>
+            </div>
+
+
+            <div class="card">
+                <h2>Sobre o Terraform</h2>
                 <p>
                     Terraform, é uma ferramenta criada pela Hashicorp em 2014, escrita em Go, tem como objetivo
                     para construir, alterar e controlar a versão de sua infraestrutura. Esta ferramenta
                     tenha uma interface de linha de comando poderosa e muito intuitiva </p>
-                <p><i class="fa fa-cube"></i><strong> Instalação</strong></p>
+                <h3><i class="fa fa-cube"></i><strong> Instalação</strong></h3>
 
                 <code>$ curl https://releases.hashicorp.com/terraform</code>
 
@@ -157,10 +159,8 @@
                         </p>
                     </li>
                 </ul>
-
             </div>
-        </div>
-        <div id="perfis">
+
             <div class="card">
                 <img src="" alt="">
 
@@ -329,36 +329,45 @@
 
                 <p><strong>graph</strong></p>
                 <p>
-                    O comando <code>terraform graph</code>gerar uma representação visual de um plano de configuração ou execução. A saída está no formato DOT, que pode ser usado pelo GraphViz para gerar gráficos.
+                    O comando <code>terraform graph</code>gerar uma representação visual de um plano de configuração ou
+                    execução. A saída está no formato DOT, que pode ser usado pelo GraphViz para gerar gráficos.
                 </p>
                 <code>$ terraform grapho [options] [dir]</code>
 
                 <p>
-                    Produz o gráfico de dependência visual dos recursos do Terraform de acordo com os arquivos de configuração no DIR (ou o diretório atual, se omitido).
+                    Produz o gráfico de dependência visual dos recursos do Terraform de acordo com os arquivos de
+                    configuração no DIR (ou o diretório atual, se omitido).
                 </p>
                 <p>
-                    O gráfico é produzido no formato DOT. O programa típico que pode ler esse formato é o GraphViz, mas muitos serviços da web também estão disponíveis para ler esse formato.
+                    O gráfico é produzido no formato DOT. O programa típico que pode ler esse formato é o GraphViz, mas
+                    muitos serviços da web também estão disponíveis para ler esse formato.
                 </p>
                 <p>
-                    O flag -type pode ser usado para controlar o tipo de gráfico mostrado. O Terraform cria gráficos diferentes para diferentes operações. Veja as opções abaixo para a lista de tipos suportados. O tipo padrão é "plano" se uma configuração for fornecida e "aplicar" se um arquivo de plano for passado como argumento.
+                    O flag -type pode ser usado para controlar o tipo de gráfico mostrado. O Terraform cria gráficos
+                    diferentes para diferentes operações. Veja as opções abaixo para a lista de tipos suportados. O tipo
+                    padrão é "plano" se uma configuração for fornecida e "aplicar" se um arquivo de plano for passado
+                    como argumento.
                 </p>
                 <p>
                     Opções
                 </p>
                 <ul>
-                        <li>
-                            <p>
-                                <code>-draw-cycles</code> Realce quaisquer ciclos no gráfico com bordas coloridas. Isso ajuda ao diagnosticar erros de ciclo.
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                               <code>-type=plan</code> Tipo de gráfico para saída. Pode ser:<code>plan, plan-destroy, apply, validate, input, refresh</code>.
-                            </p>
-                        </li>
-                    </ul>
+                    <li>
+                        <p>
+                            <code>-draw-cycles</code> Realce quaisquer ciclos no gráfico com bordas coloridas. Isso
+                            ajuda ao diagnosticar erros de ciclo.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <code>-type=plan</code> Tipo de gráfico para saída. Pode ser:<code>plan, plan-destroy,
+                                apply, validate, input, refresh</code>.
+                        </p>
+                    </li>
+                </ul>
                 <h3>Gerar images</h3>
-                <p>A saída do <code>terraform graph</code> está no formato DOT, que pode ser facilmente convertido em uma imagem usando o ponto fornecido pelo GraphViz:</p>
+                <p>A saída do <code>terraform graph</code> está no formato DOT, que pode ser facilmente convertido em
+                    uma imagem usando o ponto fornecido pelo GraphViz:</p>
                 <code>$ terraform graph | dot -Tsvg > graph.svg</code>
             </div>
 
@@ -413,7 +422,7 @@
                 <p> - reconfigure é usado para dizer ao terraform para não copiar o
                     estado existente para o novo local do estado remoto.</p>
             </div>
-            
+
             <div class="card">
                 <img src="" alt="">
 
@@ -677,9 +686,8 @@
                     qualquer momento com um comando equivalente <code>terraform plan -destroy</code>.</p>
                 <p>
             </div>
-        </div>
+        </section>
     </div>
-
 
     <div id="footer">
         <img src="" alt="">
