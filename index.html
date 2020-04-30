@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Rokkitt:500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <title>terrasheet</title>
+    <title>tf - Hubdoc - Documentação do terraform em pt-br</title>
 </head>
 
 <body>
@@ -22,11 +24,12 @@
             </nav>
         </header>
         <section id="box">
-            <div class="card">
+            <p>versão 1.0</p>
+            <div class="intro">
                 <p>
                     Está é uma documentação não-oficial do Terraform e foi produzida com o intuito de ajudar quem quer
-                    aprender sobre o terraform e ainda tem dificuldades com o inglês está sendo disponibilizada de forma
-                    pública e colaborativa
+                    aprender sobre o terraform e ainda tem dificuldades com o inglês,o código fonte está disponibilizado
+                    para quem quiser colaborar no link → <a href="">♥︎</a>
                 </p>
             </div>
 
@@ -37,7 +40,7 @@
                     Terraform, é uma ferramenta criada pela Hashicorp em 2014, escrita em Go, tem como objetivo
                     para construir, alterar e controlar a versão de sua infraestrutura. Esta ferramenta
                     tenha uma interface de linha de comando poderosa e muito intuitiva </p>
-                <h3><i class="fa fa-cube"></i><strong> Instalação</strong></h3>
+                <h3>Instalação</h3>
 
                 <code>$ curl https://releases.hashicorp.com/terraform</code>
 
@@ -46,9 +49,7 @@
 
                 <p>Delete o arquivo Compactado:</p>
                 <code>$ rm terraform_0.12.24_linux_amd64.zip</code>
-                <p></p>
-                <h4>Primeiros Comandos</h4>
-                <p><strong>Verificando a versão</strong></p>
+                <p>Verificando a versão</p>
                 <code>$ terraform --version</code>
                 <p>Será Exibido</p>
                 <code>$ Terraform v0.12.24</code>
@@ -56,7 +57,7 @@
 
             <div class="card">
                 <img src="" alt="">
-                <p><strong>apply</strong></p>
+                <h4><i class="fa fa-cube"></i> apply</h4>
                 <p>
                     O comando terraform apply é usado para aplicar as alterações necessárias para alcançar o estado
                     desejado da configuração ou o conjunto predeterminado de ações geradas por um plano de execução do
@@ -164,7 +165,7 @@
             <div class="card">
                 <img src="" alt="">
 
-                <p><strong>console</strong></p>
+                <h4><i class="fa fa-cube"></i> console</h4>
                 <p>
                     O comando <code>terraform console</code>fornece um console interativo para avaliar expressões.
                 </p>
@@ -188,7 +189,7 @@
             <div class="card">
                 <img src="" alt="">
 
-                <p><strong>destroy</strong></p>
+                <h4><i class="fa fa-cube"></i> destroy</h4>
                 <p>
                     O comando <code>terraform destroy</code>é usado para destruir a infraestrutura gerenciada pelo
                     Terraform.
@@ -210,7 +211,7 @@
             <div class="card">
                 <img src="" alt="">
 
-                <p><strong>fmt</strong></p>
+                <h4><i class="fa fa-cube"></i> fmt</h4>
                 <p>
                     O comando <code>terraform fmt</code> é usado para reescrever os arquivos de configuração do
                     Terraform para um formato e estilo canônicos. Este comando aplica um subconjunto das convenções de
@@ -264,7 +265,7 @@
             <div class="card">
                 <img src="" alt="">
 
-                <p><strong>force-unlock</strong></p>
+                <h4><i class="fa fa-cube"></i> force-unlock</h4>
                 <p>
                     Desbloqueie manualmente o estado da configuração definida.
                     Isso não modificará sua infraestrutura. Este comando remove o bloqueio no estado para a configuração
@@ -289,7 +290,7 @@
             <div class="card">
                 <img src="" alt="">
 
-                <p><strong>get</strong></p>
+                <h4><i class="fa fa-cube"></i> get</h4>
                 <p>
                     O comando terraform get é usado para baixar e atualizar os módulos mencionados no módulo raiz.
                 </p>
@@ -302,7 +303,7 @@
                 </p>
 
                 <p>
-                    Se um módulo já estiver baixado e o sinalizador <code>-update</code> não estiver definido, o
+                    Se um módulo já estiver baixado e o flag <code>-update</code> não estiver definido, o
                     Terraform não fará nada. Como resultado, é seguro (e rápido) executar esse comando várias vezes.
                 </p>
                 <p>
@@ -327,7 +328,7 @@
             <div class="card">
                 <img src="" alt="">
 
-                <p><strong>graph</strong></p>
+                <h4><i class="fa fa-cube"></i> graph</h4>
                 <p>
                     O comando <code>terraform graph</code>gerar uma representação visual de um plano de configuração ou
                     execução. A saída está no formato DOT, que pode ser usado pelo GraphViz para gerar gráficos.
@@ -365,7 +366,7 @@
                         </p>
                     </li>
                 </ul>
-                <h3>Gerar images</h3>
+                <h6>Gerar images</h6>
                 <p>A saída do <code>terraform graph</code> está no formato DOT, que pode ser facilmente convertido em
                     uma imagem usando o ponto fornecido pelo GraphViz:</p>
                 <code>$ terraform graph | dot -Tsvg > graph.svg</code>
@@ -374,7 +375,7 @@
             <div class="card">
                 <img src="" alt="">
 
-                <p><strong>import</strong></p>
+                <h4><i class="fa fa-cube"></i> import</h4>
                 <p>
                     O comando <code>terraform destroy</code>é usado para destruir a infraestrutura gerenciada pelo
                     Terraform.
@@ -395,38 +396,318 @@
 
             <div class="card">
                 <img src="" alt="">
-                <p><strong>init</strong></p>
+                <h4><i class="fa fa-cube"></i> init</h4>
                 <code>$ terraform init</code>
+                <p>
+                    <code>$ terraform init [options] [dir]</code>
+                </p>
 
-                <p>É o primeiro comando que você precisa executar. Caso não execute o terraform
-                    planejar, aplicar, destruir e importar não funcionará. O comando
-                    init terraform irá instalar : </p>
+                <p>O comando<code>terraform init</code>é usado para inicializar um diretório de trabalho que contém os
+                    arquivos de
+                    configuração do Terraform. Este é o primeiro comando que deve ser executado após escrever uma nova
+                    configuração do Terraform ou clonar uma existente do controle de versão. É seguro executar este
+                    comando várias vezes.Embora as execuções subseqüentes possam dar erros, esse comando nunca excluirá
+                    sua configuração ou estado existente.
+                </p>
+                <p>
+                    Se nenhum argumento for fornecido, a configuração no diretório de trabalho atual será inicializada.
+                    Recomenda-se executar o Terraform com o diretório de trabalho atual definido como o diretório raiz
+                    da configuração e omitir o argumento DIR.
+                </p>
+                <p>
+
+                    As seguintes opções se aplicam a todas (ou várias) etapas da inicialização:
+                    <ul>
+                        <li>
+                            <p>
+                                <code>-input=true</code>Peça entrada, se necessário. Se falso, ocorrerá erro se a
+                                entrada for necessária.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <code>-lock=false</code>Desative o bloqueio de arquivos de estado durante operações
+                                relacionadas ao estado.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <code>-lock-timeout=(duração)</code>Substitui o tempo que o Terraform aguardará para
+                                adquirir um bloqueio de estado. O padrão é 0s (zero segundos), o que causa falha
+                                imediata se o bloqueio já estiver retido por outro processo.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <code>-no-color</code>Desativa os códigos de cores na saída do comando.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <code>-upgrade</code>Opte por atualizar módulos e plug-ins como parte de suas
+                                respectivas etapas de instalação. Veja as seções abaixo para mais detalhes.
+                            </p>
+                        </li>
+                    </ul>
+                </p>
+                <p>
+                    Caso não execute o terraform init os comandos
+                    planejar, aplicar, destruir e importar não funcionarão. na sua primeira execuçao o comando
+                    terraform init irá instalar : </p>
                 <ul>
                     <li>
-                        <p>Módulos Terraform</p>
+                        <h5>Incialização de um Backend</h5>
+                        <p>Durante o init, o diretório de configuração raiz é consultado para a configuração de back-end
+                            e o back-end escolhido é inicializado usando as definições de configuração fornecidas.
+
+                            Executar novamente o init com um back-end já inicializado atualizará o diretório de trabalho
+                            para usar as novas configurações de back-end. Dependendo do que foi alterado, isso pode
+                            resultar em avisos interativos para confirmar a migração dos estados da área de trabalho. A
+                            opção<code>-force-copy</code>suprime esses avisos e responde "sim" às perguntas de migração.
+                            A opção<code>-reconfigure</code>desconsidera qualquer configuração existente, impedindo a
+                            migração de qualquer estado existente.
+
+                            Para pular a configuração de back-end, use <code>-backend=false</code> . Observe que algumas
+                            outras etapas de inicialização requerem um back-end inicializado, portanto, é recomendável
+                            usar esse flag somente quando o diretório de trabalho já foi inicializado anteriormente para
+                            um back-end específico.
+
+                            A opção<code>-backend-config=...</code>pode ser usada para configuração de back-end parcial,
+                            em situações em que as configurações de back-end são dinâmicas ou sensíveis e, portanto, não
+                            podem ser especificadas estaticamente no arquivo de configuração</p>
                     </li>
                     <li>
-                        <p>Eventualmente, um back-end</p>
+                        <h5>Módulos Terraform</h5>
+                        <p>Durante o init, a configuração é pesquisada por blocos de módulos e o código fonte dos
+                            módulos referenciados é recuperado dos locais fornecidos em seus argumentos de origem.
+
+                            Executar novamente o init com os módulos já instalados instalará as fontes de todos os
+                            módulos que foram adicionados à configuração desde o último init, mas não alterará nenhum
+                            módulo já instalado. Use<code>-upgrade</code>para substituir esse comportamento, atualizando
+                            todos os
+                            módulos para o código-fonte disponível mais recente.
+
+                            Para ignorar a instalação do módulo filho, use<code>-get=false</code>. Observe que algumas
+                            outras
+                            etapas init podem ser concluídas somente quando a árvore do módulo estiver concluída,
+                            portanto, é recomendável usar esse flag somente quando o diretório de trabalho já foi
+                            inicializado anteriormente com seus módulos filhos.</p>
                     </li>
                     <li>
-                        <p>Plugins dos Providers</p>
+                        <h5>Plugins dos Providers</h5>
+                        <p>
+                            Durante o init, o Terraform pesquisa na configuração referências diretas e indiretas a
+                            provedores e tenta carregar os plugins necessários.
+                        </p>
+                        <p>
+                            Para provedores distribuídos pela HashiCorp, o init baixará e instalará plug-ins
+                            automaticamente, se necessário. Os plug-ins também podem ser instalados manualmente no
+                            diretório de plug-ins do usuário, localizado em <code>~/.terraform.d/plugins</code> na
+                            maioria dos sistemas operacionais e<code>%APPDATA%\terraform.d\plugins</code>no Windows.
+                            <p>
+                                Você pode modificar o comportamento do plug-in do<code>terraform init</code>com as
+                                seguintes opções:
+                            </p>
+                            <ul>
+                                <li>
+                                    <p>
+                                        <code>-upgrade</code>Atualiza todos os plug-ins instalados anteriormente para a
+                                        versão mais recente que esteja em conformidade com as restrições da versão de
+                                        configuração. Esta opção não se aplica a plug-ins instalados manualmente.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <code>-get-plugins=false</code>Ignora a instalação do plugin. O Terraform usará
+                                        plugins instalados no diretório de plugins do usuário e todos os plugins já
+                                        instalados para o diretório de trabalho atual. Se os plug-ins instalados não
+                                        forem suficientes para a configuração, o init falhará.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <code>-plugin-dir=PATH</code>Ignora a instalação do plug-in e carrega plug-ins
+                                        apenas do diretório especificado. Isso ignora o diretório de plugins do usuário
+                                        e todos os plugins já instalados no diretório de trabalho atual. Para restaurar
+                                        o comportamento padrão depois de usar esta opção, execute init novamente e passe
+                                        uma sequência vazia para <code>-plugin-dir</code>.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <code>-verify-plugins=false</code>Ignora a validação da assinatura da versão ao
+                                        instalar plug-ins baixados (não recomendado). Os lançamentos oficiais de
+                                        plug-ins são assinados digitalmente pela HashiCorp, e o Terraform verifica essas
+                                        assinaturas ao fazer o download automático de plug-ins. Esta opção desativa essa
+                                        verificação. (O Terraform não verifica assinaturas para plug-ins instalados
+                                        manualmente.)
+                                    </p>
+                                </li>
+                            </ul>
+
+                        </p>
                     </li>
                 </ul>
-
-                <p><strong>Inicie o Terraform e não peça nenhuma entrada</strong></p>
-                <code>$ terraform init -input=false</code>
-
-                <p><strong>Alterar a configuração de back-end durante o init</strong></p>
-                <code>$ terraform init -backend-config=cfg/s3.dev.tf -
-                    reconfigure</code>
-                <p> - reconfigure é usado para dizer ao terraform para não copiar o
-                    estado existente para o novo local do estado remoto.</p>
             </div>
 
             <div class="card">
                 <img src="" alt="">
 
-                <p><strong>login</strong></p>
+                <h4><i class="fa fa-cube"></i> login</h4>
+                <p>
+                    O comando <code>terraform login</code>pode ser usado para obter e salvar automaticamente um token de
+                    API para Terraform Cloud, Terraform Enterprise ou qualquer outro host que ofereça serviços
+                    Terraform.
+                </p>
+                <code>$ terraform login [hostname]</code>
+                <p>
+                    Nota: Este comando é adequado apenas para uso em cenários interativos onde é possível iniciar um
+                    navegador da web no mesmo host em que o Terraform está sendo executado. Se você estiver executando o
+                    Terraform em um cenário de automação autônoma, poderá configurar credenciais manualmente na
+                    configuração da CLI.
+                </p>
+
+                <p>
+                    Se você não fornecer um nome de host explícito, o Terraform assumirá que você deseja efetuar login
+                    no Terraform Cloud em app.terraform.io.
+                </p>
+                <p>
+                    Por padrão, o Terraform obterá um token da API e o salvará em texto sem formatação em um arquivo de
+                    configuração da CLI local chamado<code>credentials.tfrc.json</code>.Quando você executa o
+                    <code>terraform login</code>,ele explica especificamente onde pretende salvar o token da API e
+                    permite a você cancelar se a configuração atual não for a desejada.
+
+                    Se você não deseja armazenar seu token de API no local padrão, pode opcionalmente configurar um
+                    programa auxiliar de credenciais que saiba como armazenar e recuperar credenciais posteriormente em
+                    algum outro sistema, como o sistema de gerenciamento de segredos existente da sua organização.
+                </p>
+                <p>
+                    O comando terraform login funciona com qualquer servidor que suporte o protocolo de login, incluindo
+                    Terraform Cloud e Terraform Enterprise.
+                </p>
+            </div>
+
+            <div class="card">
+                <img src="" alt="">
+
+                <h4><i class="fa fa-cube"></i> logout</h4>
+                <p>
+                    O comando <code>terraform logout</code>é usado para remover credenciais armazenadas
+                    pelo<code>terraform login</code>. Essas credenciais são tokens de API para Terraform Cloud,
+                    Terraform Enterprise ou qualquer outro host que ofereça serviços Terraform.
+                </p>
+                <code>$ terraform logout [hostname]</code>
+                <p>
+                    Se você não fornecer um nome de host explícito, o Terraform assumirá que você deseja sair do
+                    Terraform Cloud em app.terraform.io.
+                </p>
+                <p>
+                    Nota: o token da API é removido apenas do armazenamento local, não destruído no servidor remoto,
+                    portanto, permanecerá válido até ser revogado manualmente.
+                </p>
+                <p>
+                    Por padrão, o Terraform removerá o token armazenado em texto sem formatação em um arquivo de
+                    configuração da CLI local chamado<code>credentials.tfrc.json</code>. Se você configurou um programa
+                    auxiliar de credenciais, o Terraform usará o comando<code>forget</code> do auxiliar para removê-lo.
+                </p>
+            </div>
+
+            <div class="card">
+                <img src="" alt="">
+
+                <h4><i class="fa fa-cube"></i> output</h4>
+                <p>
+                    O comando <code>terraform output</code>O comando terraform output é usado para extrair o valor de
+                    uma variável de saída do arquivo de estado.
+                </p>
+                <code>$ terraform output [options] [NAME]</code>
+                <p>
+                    Sem argumentos adicionais, a saída exibirá todas as saídas para o módulo raiz. Se um NAME de output
+                    for especificado, apenas o valor dessa saída será impresso.
+                </p>
+                <p>
+                    Os flags da linha de comando são todos opcionais. A lista de flags disponíveis é:
+                </p>
+                <ul>
+                    <li>
+                        <p>
+                            <code>-json</code>Se especificado, as saídas são formatadas como um objeto JSON, com uma
+                            chave por saída. Se NAME for especificado, somente a saída especificada será retornada. Isso
+                            pode ser canalizado para ferramentas como jq para processamento adicional.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <code>-no-color</code>Se especificado, a saída não conterá nenhuma cor.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <code>-state=path</code>Caminho para o arquivo de estado. O padrão é "terraform.tfstate".
+                            Ignorado quando o estado remoto é usado
+                        </p>
+                    </li>
+                </ul>
+                <p>
+                    Esses exemplos assumem o seguinte snippet de saída do Terraform.
+                </p>
+                <pre>
+output "lb_address" {
+    value = "${aws_alb.web.public_dns}"
+}
+
+output "instance_ips" {
+    value = ["${aws_instance.web.*.public_ip}"]
+}
+
+output "password" {
+    sensitive = true
+    value = ["${var.secret_password}"]
+}
+</pre>
+                <p>
+                    Listar todos os outputs
+                </p>
+                <code>
+                    $ terraform output
+                </code>
+                <p>Observe que as saídas com o atributo sensível serão redigidas:<code>$ terraform output password
+                        password = (sensitive)</code></p>
+                <br>
+                <p>
+                    Para consultar o endereço DNS do balanceador de carga(Load Balancer)
+                </p>
+                <pre>
+$ terraform output lb_address
+my-app-alb-1657023003.us-east-1.elb.amazonaws.com
+</pre>
+                <p>
+                    Para consultar todos os endereços IP da instância:
+                </p>
+                <pre>
+$ terraform output instance_ips
+test = [
+    54.43.114.12,
+    52.122.13.4,
+    52.4.116.53
+] 
+</pre>
+                <p>
+                    Para consultar um valor específico em uma lista, use -json e um analisador de linha de comando JSON,
+                    como jq*. Por exemplo, para consultar o endereço IP da primeira instância:
+                </p>
+                <code>
+                    $ terraform output -json instance_ips | jq '.value[0]'
+                </code>
+                <h6>*O jq é como sed para dados JSON - você pode usá-lo para cortar, filtrar, mapear e transformar dados
+                    estruturados com a mesma facilidade que sed, awk, grep e etc</h6>
+                <p>Consulte Mais <a href="https://stedolan.github.io/jq/">https://stedolan.github.io/jq/</a></p>
+            </div>
+
+            <div class="card">
+                <img src="" alt="">
+
+                <h4><i class="fa fa-cube"></i> plan</h4>
                 <p>
                     O comando <code>terraform destroy</code>é usado para destruir a infraestrutura gerenciada pelo
                     Terraform.
@@ -448,7 +729,7 @@
             <div class="card">
                 <img src="" alt="">
 
-                <p><strong>logout</strong></p>
+                <h4><i class="fa fa-cube"></i> providers</h4>
                 <p>
                     O comando <code>terraform destroy</code>é usado para destruir a infraestrutura gerenciada pelo
                     Terraform.
@@ -470,7 +751,7 @@
             <div class="card">
                 <img src="" alt="">
 
-                <p><strong>output</strong></p>
+                <h4><i class="fa fa-cube"></i> refresh</h4>
                 <p>
                     O comando <code>terraform destroy</code>é usado para destruir a infraestrutura gerenciada pelo
                     Terraform.
@@ -492,7 +773,7 @@
             <div class="card">
                 <img src="" alt="">
 
-                <p><strong>plan</strong></p>
+                <h4><i class="fa fa-cube"></i> show</h4>
                 <p>
                     O comando <code>terraform destroy</code>é usado para destruir a infraestrutura gerenciada pelo
                     Terraform.
@@ -514,7 +795,7 @@
             <div class="card">
                 <img src="" alt="">
 
-                <p><strong>providers</strong></p>
+                <h4><i class="fa fa-cube"></i> state</h4>
                 <p>
                     O comando <code>terraform destroy</code>é usado para destruir a infraestrutura gerenciada pelo
                     Terraform.
@@ -536,7 +817,7 @@
             <div class="card">
                 <img src="" alt="">
 
-                <p><strong>refresh</strong></p>
+                <h4><i class="fa fa-cube"></i> taint</h4>
                 <p>
                     O comando <code>terraform destroy</code>é usado para destruir a infraestrutura gerenciada pelo
                     Terraform.
@@ -558,7 +839,63 @@
             <div class="card">
                 <img src="" alt="">
 
-                <p><strong>show</strong></p>
+                <h4><i class="fa fa-cube"></i> validate</h4>
+                <p>
+                    O comando<code>terraform validate</code> valida os arquivos de configuração em um diretório,
+                    referindo-se apenas
+                    à configuração e não acessando nenhum serviço remoto, como estado remoto, APIs do provedor etc.</p>
+
+                <p>
+                    Validar executa verificações que verificam se uma configuração é sintaticamente válida e consistente
+                    internamente, independentemente de qualquer variável fornecida ou estado existente. Portanto, é útil
+                    principalmente para a verificação geral de módulos reutilizáveis, incluindo a correção de nomes de
+                    atributos e tipos de valor.</p>
+
+                <p>É seguro executar esse comando automaticamente, por exemplo, como uma verificação pós-salvamento em
+                    um editor de texto ou como uma etapa de teste para um módulo reutilizável em um sistema de CI.</p>
+
+                <p>A validação requer um diretório de trabalho inicializado com todos os plugins e módulos referenciados
+                    instalados. Para inicializar um diretório ativo para validação sem acessar nenhum back-end remoto
+                    configurado, use:</p>
+                <code>$ terraform init -backend=false</code>
+                <p>
+                    Se dir não for especificado, o diretório atual será usado.
+                </p>
+                <p>
+                    Para verificar a configuração no contexto de uma execução específica (um espaço de trabalho de
+                    destino específico, valores variáveis de entrada etc.), use o comando terraform plan, que inclui uma
+                    verificação implícita de validação.
+                </p>
+                <code>terraform validate [options] [dir]</code>
+
+                <p>
+                    Por padrão,<code>validate</code> não requer flags e procura no diretório atual as configurações.
+                </p>
+                <p>
+                    Os flags da linha de comando são todos opcionais. Os flags disponíveis são:
+                    <ul>
+                        <li>
+                            <p>
+                                <code>-json</code> Produz saída em um formato JSON legível por máquina, adequado para
+                                uso em integrações de editor de texto e outros sistemas automatizados. Desativa sempre a
+                                cor.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <code>-no-color</code> Se especificado, a saída não conterá nenhuma cor.
+                            </p>
+                        </li>
+                    </ul>
+                </p>
+
+
+            </div>
+
+            <div class="card">
+                <img src="" alt="">
+
+                <h4><i class="fa fa-cube"></i> untaint</h4>
                 <p>
                     O comando <code>terraform destroy</code>é usado para destruir a infraestrutura gerenciada pelo
                     Terraform.
@@ -580,111 +917,120 @@
             <div class="card">
                 <img src="" alt="">
 
-                <p><strong>state</strong></p>
+                <h4><i class="fa fa-cube"></i> workspace</h4>
                 <p>
-                    O comando <code>terraform destroy</code>é usado para destruir a infraestrutura gerenciada pelo
-                    Terraform.
+                    O comando <code>terraform workspace</code> O comando terraform workspace é usado para gerenciar
+                    workspace
                 </p>
-                <code>$ terraform destroy [options] [dir]</code>
-
-                <p>A infraestrutura gerenciada pela Terraform será destruída. Isso pedirá confirmação antes de destruir.
-                    Este comando aceita todos os argumentos e flags que o comando apply aceita, com exceção de um
-                    argumento do arquivo de plano.
-                    Se <code>-auto-approve</code>estiver definido, a confirmação de destruição não será mostrada.
-                    O flag <code>-target</code>, em vez de afetar as "dependências", também destruirá todos os recursos
-                    que dependem do(s) destino(s) especificado(s). Para mais informações, consulte os documentos de
-                    segmentação do <code>terraform plan</code>.
-                    O comportamento de qualquer comando de <code>terraform destroy</code> pode ser visualizado a
-                    qualquer momento com um comando equivalente <code>terraform plan -destroy</code>.</p>
                 <p>
-            </div>
-
-            <div class="card">
-                <img src="" alt="">
-
-                <p><strong>taint</strong></p>
-                <p>
-                    O comando <code>terraform destroy</code>é usado para destruir a infraestrutura gerenciada pelo
-                    Terraform.
+                    Este comando é um contêiner para subcomandos adicionais. Esses subcomandos
+                    <code>list,select,new,delete e show</code> estão listados abaixo.
                 </p>
-                <code>$ terraform destroy [options] [dir]</code>
+                <code>$ terraform workspace subcommand [options] [args]</code>
+                <ul>
+                    <li>
+                        <h5>list</h5>
+                        <p>O<code>terraform workspace list</code>é usado para listar todos os espaços de
+                            trabalho(workspace) existentes.</p>
+                        <code>$ terraform workspace list</code>
+                        <p>O comando listará todos os espaços de trabalho existentes. O espaço de trabalho atual é
+                            indicado usando um marcador de asterisco (*).</p>
+                        <p>Exemplo</p>
+                        <pre>
+    $ terraform workspace list
+    default
+    * development
+    jsmith-test
+                        </pre>
+                    </li>
 
-                <p>A infraestrutura gerenciada pela Terraform será destruída. Isso pedirá confirmação antes de destruir.
-                    Este comando aceita todos os argumentos e flags que o comando apply aceita, com exceção de um
-                    argumento do arquivo de plano.
-                    Se <code>-auto-approve</code>estiver definido, a confirmação de destruição não será mostrada.
-                    O flag <code>-target</code>, em vez de afetar as "dependências", também destruirá todos os recursos
-                    que dependem do(s) destino(s) especificado(s). Para mais informações, consulte os documentos de
-                    segmentação do <code>terraform plan</code>.
-                    O comportamento de qualquer comando de <code>terraform destroy</code> pode ser visualizado a
-                    qualquer momento com um comando equivalente <code>terraform plan -destroy</code>.</p>
-                <p>
-            </div>
+                    <li>
+                        <h5>select</h5>
+                        <p>O comando<code>terraform workspace select</code>é usado para escolher um espaço de trabalho
+                            diferente para usar em outras operações.</p>
+                        <code>$ terraform workspace select [NAME]</code>
+                        <p>Este comando selecionará outro espaço de trabalho. O espaço de trabalho nomeado já deve
+                            existir.</p>
+                        <p>Exemplo</p>
+                        <pre>
+    $ terraform workspace list
+    default
+    * development
+    jsmith-test
+    
+    $ terraform workspace select default
+    Switched to workspace "default"
+                </pre>
+                    </li>
 
-            <div class="card">
-                <img src="" alt="">
+                    <h5>new</h5>
+                    <p>O comando<code>terraform workspace new</code> é usado para criar um novo espaço de trabalho..</p>
+                    <code>$ terraform workspace new [NAME]</code>
+                    <p>Este comando criará um novo espaço de trabalho com o nome fornecido. Um espaço de trabalho com
+                        esse nome ainda não deve existir.Se o flag<code>-state</code> for fornecido, o estado
+                        especificado pelo caminho especificado será copiado para inicializar o estado para este novo
+                        espaço de trabalho.</p>
+                    <p>Os sinalizadores da linha de comando são todos opcionais. O único sinalizador suportado é:</p>
+                    <ul>
+                        <li>
+                            <p><code>state=path</code> Caminho para um arquivo de estado para inicializar o estado deste
+                                ambiente.</p>
+                        </li>
+                    </ul>
 
-                <p><strong>validate</strong></p>
-                <p>
-                    O comando <code>terraform destroy</code>é usado para destruir a infraestrutura gerenciada pelo
-                    Terraform.
-                </p>
-                <code>$ terraform destroy [options] [dir]</code>
+                    <p>Exemplo:</p>
+                    <pre>
+    $ terraform workspace new example
+    Created and switched to workspace "example"!
+    
+    You're now on a new, empty workspace. Workspaces isolate their state,
+    so if you run "terraform plan" Terraform will not see any existing state
+    for this configuration.
+</pre>
+                    <p>Exemplo com Estado:</p>
+                    <p>Para criar um novo espaço de trabalho a partir de um arquivo de estado local preexistente:</p>
+                    <pre>
+    $ terraform workspace new -state=old.terraform.tfstate example
+    Created and switched to workspace "example".
 
-                <p>A infraestrutura gerenciada pela Terraform será destruída. Isso pedirá confirmação antes de destruir.
-                    Este comando aceita todos os argumentos e flags que o comando apply aceita, com exceção de um
-                    argumento do arquivo de plano.
-                    Se <code>-auto-approve</code>estiver definido, a confirmação de destruição não será mostrada.
-                    O flag <code>-target</code>, em vez de afetar as "dependências", também destruirá todos os recursos
-                    que dependem do(s) destino(s) especificado(s). Para mais informações, consulte os documentos de
-                    segmentação do <code>terraform plan</code>.
-                    O comportamento de qualquer comando de <code>terraform destroy</code> pode ser visualizado a
-                    qualquer momento com um comando equivalente <code>terraform plan -destroy</code>.</p>
-                <p>
-            </div>
+    You're now on a new, empty workspace. Workspaces isolate their state,
+    so if you run "terraform plan" Terraform will not see any existing state
+    for this configuration.
+                </pre>
+                    </li>
 
-            <div class="card">
-                <img src="" alt="">
-
-                <p><strong>untaint</strong></p>
-                <p>
-                    O comando <code>terraform destroy</code>é usado para destruir a infraestrutura gerenciada pelo
-                    Terraform.
-                </p>
-                <code>$ terraform destroy [options] [dir]</code>
-
-                <p>A infraestrutura gerenciada pela Terraform será destruída. Isso pedirá confirmação antes de destruir.
-                    Este comando aceita todos os argumentos e flags que o comando apply aceita, com exceção de um
-                    argumento do arquivo de plano.
-                    Se <code>-auto-approve</code>estiver definido, a confirmação de destruição não será mostrada.
-                    O flag <code>-target</code>, em vez de afetar as "dependências", também destruirá todos os recursos
-                    que dependem do(s) destino(s) especificado(s). Para mais informações, consulte os documentos de
-                    segmentação do <code>terraform plan</code>.
-                    O comportamento de qualquer comando de <code>terraform destroy</code> pode ser visualizado a
-                    qualquer momento com um comando equivalente <code>terraform plan -destroy</code>.</p>
-                <p>
-            </div>
-
-            <div class="card">
-                <img src="" alt="">
-
-                <p><strong>workspace</strong></p>
-                <p>
-                    O comando <code>terraform destroy</code>é usado para destruir a infraestrutura gerenciada pelo
-                    Terraform.
-                </p>
-                <code>$ terraform destroy [options] [dir]</code>
-
-                <p>A infraestrutura gerenciada pela Terraform será destruída. Isso pedirá confirmação antes de destruir.
-                    Este comando aceita todos os argumentos e flags que o comando apply aceita, com exceção de um
-                    argumento do arquivo de plano.
-                    Se <code>-auto-approve</code>estiver definido, a confirmação de destruição não será mostrada.
-                    O flag <code>-target</code>, em vez de afetar as "dependências", também destruirá todos os recursos
-                    que dependem do(s) destino(s) especificado(s). Para mais informações, consulte os documentos de
-                    segmentação do <code>terraform plan</code>.
-                    O comportamento de qualquer comando de <code>terraform destroy</code> pode ser visualizado a
-                    qualquer momento com um comando equivalente <code>terraform plan -destroy</code>.</p>
-                <p>
+                    <li>
+                        <h5>delete</h5>
+                        <p>O<code>terraform workspace delete</code>é usado para deletar um espaço de
+                            trabalho(workspace) existente.</p>
+                        <code>$ terraform workspace delete [NAME]</code>
+                        <p>O comando deletará o workspace especificado.</p>
+                        <p>Para excluir um espaço de trabalho, ele já deve existir, deve ter um estado vazio e não deve ser seu espaço de trabalho atual. Se o estado da área de trabalho não estiver vazio, o Terraform não permitirá que você a exclua, a menos que o sinalizador <code>-force</code> seja especificado.</p>
+                        <p>Se você excluir um espaço de trabalho com um estado não vazio (via -force), os recursos poderão ficar "dangling". Esses são recursos que existem fisicamente, mas que o Terraform não pode mais gerenciar. Às vezes, isso é preferível: você deseja que o Terraform pare de gerenciar recursos para que eles possam ser gerenciados de outra maneira. Na maioria das vezes, no entanto, isso não se destina e, portanto, o Terraform o protege de entrar nessa situação.</p>
+                        <p>Os sinalizadores da linha de comando são todos opcionais. O único sinalizador suportado é:</p>
+                        <ul>
+                            <li>
+                                <p><code>-force</code> Exclui a área de trabalho, mesmo que seu estado não esteja vazio. O padrão é false</p>
+                            </li>
+                        </ul>
+                        <p>Exemplo</p>
+                        <pre>
+    $ terraform workspace delete example
+    Deleted workspace "example"
+                        </pre>
+                    </li>
+                    <li>
+                        <h5>show</h5>
+                        <p>O<code>terraform workspace show</code>é usado para gerar o espaço de trabalho atual</p>
+                        <code>terraform workspace show</code>
+                        <p>O comando exibirá o espaço de trabalho atual</p>
+                        <p>Exemplo</p>
+                        <pre>
+    $ terraform workspace show
+    development
+                        </pre>
+                    </li>
+                </ul>
             </div>
         </section>
     </div>
