@@ -3,14 +3,14 @@ body {
     background-color: rgb(226, 226, 226);
     margin: 64px;
     font-family: 'Open Sans', sans-serif;
-    color: rgb(0, 0, 0);
+    color: rgb(43, 43, 43);
     
 }
 
 #container {
     align-content: center;
     width: auto;
-    max-width: 890px;
+    max-width: 1024px;
     margin: 40px auto;
 
 }
@@ -24,11 +24,35 @@ body {
     display: flex;
 }
 
+body .codeline{
+    background-color: rgb(56, 56, 56);
+    padding: 15px;
+    color: white;
+}
+
+.intro {
+    padding:30px ;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 0px;
+    text-align: justify;
+}
+
+div .intro a{
+    font-size: 20px;
+}
+
+div .intro p {
+    font-size: 16px;
+}
+
 p {
-    
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 400;
 }
+
 
 a {
     color: #623CE4;
@@ -44,16 +68,6 @@ a {
     justify-content:center;
 }
 
-.intro {
-    padding:30px ;
-    margin-top: 32px;
-    margin-bottom: 32px;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 0px;
-    text-align: justify;
-}
-
 .card {
     padding:30px ;
     margin-top: 15px;
@@ -65,26 +79,36 @@ a {
     text-align: justify;
 }
 
-h2, h4, h5{
-    margin: 0px;
-    margin-top: 2px;
+.card .note{
+    background-color: rgba(211, 200, 248, 0.411);
+    padding: 15px;
+    border: 0.8px solid rgba(99, 60, 228, 0.411) ;
+    border-radius: 8px;
+    
 }
 
-.card code {
+.card h2 {
+    background-color: #623CE4;
+    padding: 20px;
+    text-align: initial;
+    color: white;
+    
+}
+
+
+
+code {
     font-family: 'Ubuntu Mono', monospace;
     margin-left: 2px;
-    font-size: 12px;
+    font-size: 13px;
     color: #623CE4;
 } 
 
 .card pre{
-    width: 220px;
+    padding: 15px;
+    background-color: rgb(223, 223, 223);
     font-family: 'Ubuntu Mono', monospace;
     margin-left: 2px;
-    font-size: 12px;
-    color: #623CE4;
-}
-
-li {
-    list-style: none;
+    font-size: 13px;
+    color: rgb(85, 85, 85);
 }

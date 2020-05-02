@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <title>tf - Hubdoc - Documentação do terraform em pt-br</title>
+    <title>Hubdoc - Documentação do terraform em pt-br</title>
 </head>
 
 <body>
@@ -20,18 +20,18 @@
         <header>
             <img src="img/logo-hubdoc.png" alt="">
             <nav>
-                <a href=""> <i class="fa fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/miltonlimaj/" target="_blank" > <i class="fa fa-linkedin"></i></a>
                 <a href="https://github.com/miltlima" target="_blank"><i class="fa fa-github-alt"></i></a>
-                <a href=""> <i class="fa fa-twitter"></i> </a>
+                <a href="https://twitter.com/milt_lima" target="_blank" > <i class="fa fa-twitter"></i> </a>
             </nav>
         </header>
         <section id="box">
             <p>versão 1.0 - baseado na versão 0.12.24 do terraform</p>
             <div class="intro">
                 <p>
-                    Está é uma documentação não-oficial do Terraform e foi produzida com o intuito de ajudar quem quer
+                    Esta é uma documentação não-oficial do Terraform e foi produzida com o intuito de ajudar quem quer
                     aprender sobre o terraform e ainda tem dificuldades com o inglês,o código fonte está disponibilizado
-                    para quem quiser colaborar no link → <a class="icon" ref="">♥︎</a>
+                    para quem quiser colaborar no link → <a class="icon" ref=""><i class="fa fa-heart"></i></a>
                 </p>
             </div>
 
@@ -44,17 +44,17 @@
                     tenha uma interface de linha de comando poderosa e muito intuitiva </p>
                 <h3>Instalação</h3>
 
-                <code>$ curl https://releases.hashicorp.com/terraform </code>
+                <pre>$ curl https://releases.hashicorp.com/terraform </pre>
 
                 <p>Descompacte usando:</p>
-                <code>$ sudo unzip terraform_0.12.24_linux_amd64.zip -d /usr/local/bin/ </code>
+                <pre>$ sudo unzip terraform_0.12.24_linux_amd64.zip -d /usr/local/bin/ </pre>
 
                 <p>Delete o arquivo Compactado:</p>
-                <code>$ rm terraform_0.12.24_linux_amd64.zip </code>
+                <pre >$ rm terraform_0.12.24_linux_amd64.zip </pre>
                 <p>Verificando a versão</p>
-                <code>$ terraform --version </code>
+                <pre>$ terraform --version </pre>
                 <p>Será Exibido</p>
-                <code>$ Terraform v0.12.24 </code>
+                <pre>$ Terraform v0.12.24 </pre>
             </div>
 
             <div class="card">
@@ -65,7 +65,7 @@
                     desejado da configuração ou o conjunto predeterminado de ações geradas por um plano de execução do
                     plano de terraform.
                 </p>
-                <code>$ terraform apply [flag] [dir-or-plan] </code>
+                <pre>$ terraform apply [flag] [dir-or-plan] </pre>
                 <p>
                     Por padrão, apply verifica o diretório atual da configuração e aplica as alterações adequadamente.
                     No entanto, um caminho para outra configuração ou plano de execução pode
@@ -89,12 +89,12 @@
                     </li>
                     <li>
                         <p>
-                            <code>-lock=true </code> Bloqueia o arquivo de estado quando o bloqueio é suportado.
+                            <code>-lock=true </code> Bloqueia o arquivo do state quando o bloqueio é suportado.
                         </p>
                     </li>
                     <li>
                         <p>
-                            <code>-lock-timeout=0s </code> Duração para tentar novamente um bloqueio de estado.
+                            <code>-lock-timeout=0s </code> Duração para tentar novamente um bloqueio do state.
                         </p>
                     </li>
                     <li>
@@ -128,13 +128,13 @@
                     </li>
                     <li>
                         <p>
-                            <code>-state=path </code> Caminho para o arquivo de estado. O padrão é "terraform.tfstate".
+                            <code>-state=path </code> Caminho para o arquivo do state. O padrão é "terraform.tfstate".
                             Ignorado quando o estado remoto é usado.
                         </p>
                     </li>
                     <li>
                         <p>
-                            <code>-state-out=path </code> Caminho para gravar o arquivo de estado atualizado. Por
+                            <code>-state-out=path </code> Caminho para gravar o arquivo do state atualizado. Por
                             padrão,
                             o caminho -state será usado. Ignorado quando o estado remoto é usado
                         </p>
@@ -173,7 +173,7 @@
                 <p>
                     O comando <code>terraform console </code>fornece um console interativo para avaliar expressões.
                 </p>
-                <code>$ terraform console [options] [dir] </code>
+                <pre>$ terraform console [options] [dir] </pre>
 
                 <p>Este comando fornece um console de linha de comando interativo para avaliar e experimentar
                     expressões. Isso é útil para testar interpolações antes de usá-las em configurações e para interagir
@@ -184,8 +184,8 @@
                     especificado, o diretório de trabalho atual será usado.</p>
                 <p>
                     As opções suportadas são:
-                    <code>-state=path </code> Caminho para um arquivo de estado local. Expressões serão avaliadas usando
-                    valores desse arquivo de estado. Se não especificado, o estado associado ao espaço de trabalho atual
+                    <code>-state=path </code> Caminho para um arquivo do state local. Expressões serão avaliadas usando
+                    valores desse arquivo do state. Se não especificado, o estado associado ao espaço de trabalho atual
                     é usado.
                     Você pode fechar o console com o comando exit ou pressionando Control-C ou Control-D. </p>
             </div>
@@ -198,7 +198,7 @@
                     O comando <code>terraform destroy </code>é usado para destruir a infraestrutura gerenciada pelo
                     Terraform.
                 </p>
-                <code>$ terraform destroy [options] [dir] </code>
+                <pre>$ terraform destroy [options] [dir] </pre>
 
                 <p>A infraestrutura gerenciada pela Terraform será destruída. Isso pedirá confirmação antes de destruir.
                     Este comando aceita todos os argumentos e flags que o comando apply aceita, com exceção de um
@@ -227,7 +227,7 @@
                     atualização do Terraform, recomendamos executar proativamente o <code>terraform fmt </code> seus
                     módulos, juntamente com outras alterações que você estiver fazendo para adotar a nova versão.
                 </p>
-                <code>$ terraform fmt [options] [dir] </code>
+                <pre>$ terraform fmt [options] [dir] </pre>
 
                 <p>Por padrão, o fmt verifica o diretório atual em busca de arquivos de configuração. Se o argumento dir
                     for fornecido, ele examinará o diretório fornecido. Se dir for um traço único (-), o fmt lerá da
@@ -274,7 +274,7 @@
                 <p>
                     Desbloqueia manualmente o estado da configuração definida.
                     Isso não modificará sua infraestrutura. Este comando remove o bloqueio no estado para a configuração
-                    atual. O comportamento desse bloqueio depende do back-end que está sendo usado. Arquivos de estado
+                    atual. O comportamento desse bloqueio depende do back-end que está sendo usado. Arquivos do state
                     local não podem ser desbloqueados por outro processo.
                 </p>
                 <code>$ terraform force-unlock LOCK_ID [dir] </code>
@@ -295,7 +295,7 @@
                 <p>
                     O comando terraform get é usado para baixar e atualizar os módulos mencionados no módulo raiz.
                 </p>
-                <code>$ terraform get [option] [dir] </code>
+                <pre>$ terraform get [option] [dir] </pre>
 
                 <p>
                     Os módulos são baixados em uma pasta local .terraform. Esta pasta não deve estar comprometida com o
@@ -334,7 +334,7 @@
                     O comando <code>terraform graph </code>gerar uma representação visual de um plano de configuração ou
                     execução. A saída está no formato DOT, que pode ser usado pelo GraphViz para gerar gráficos.
                 </p>
-                <code>$ terraform grapho [options] [dir] </code>
+                <pre>$ terraform graph [options] [dir]</pre>
 
                 <p>
                     Produz o gráfico de dependência visual dos recursos do Terraform de acordo com os arquivos de
@@ -367,10 +367,10 @@
                         </p>
                     </li>
                 </ul>
-                <h6>Gerar images</h6>
+                <h4>Gerar images</h4>
                 <p>A saída do <code>terraform graph </code> está no formato DOT, que pode ser facilmente convertido em
                     uma imagem usando o ponto fornecido pelo GraphViz:</p>
-                <code>$ terraform graph | dot -Tsvg > graph.svg </code>
+                <pre>$ terraform graph | dot -Tsvg > graph.svg </pre>
             </div>
 
             <div class="card">
@@ -398,18 +398,19 @@
             <div class="card">
                 <img src="" alt="">
                 <h2><i class="fa fa-cube"></i> init</h2>
-                <code>$ terraform init </code>
-                <p>
-                    <code>$ terraform init [options] [dir] </code>
-                </p>
+                
+               
 
                 <p>O comando<code>terraform init </code>é usado para inicializar um diretório de trabalho que contém os
                     arquivos de
                     configuração do Terraform. Este é o primeiro comando que deve ser executado após escrever uma nova
                     configuração do Terraform ou clonar uma existente do controle de versão. É seguro executar este
-                    comando várias vezes.Embora as execuções subseqüentes possam dar erros, esse comando nunca excluirá
+                    comando várias vezes.Embora as execuções subseqüentes possam dar erros, esse comando nunca exc/pre
                     sua configuração ou estado existente.
                 </p>
+                <pre>$ terraform init </pre>
+                
+                <pre>$ terraform init [options] [dir] </pre>
                 <p>
                     Se nenhum argumento for fornecido, a configuração no diretório de trabalho atual será inicializada.
                     Recomenda-se executar o Terraform com o diretório de trabalho atual definido como o diretório raiz
@@ -427,14 +428,14 @@
                         </li>
                         <li>
                             <p>
-                                <code>-lock=false </code>Desative o bloqueio de arquivos de estado durante operações
+                                <code>-lock=false </code>Desative o bloqueio de arquivos do state durante operações
                                 relacionadas ao estado.
                             </p>
                         </li>
                         <li>
                             <p>
                                 <code>-lock-timeout=(duração) </code>Substitui o tempo que o Terraform aguardará para
-                                adquirir um bloqueio de estado. O padrão é 0s (zero segundos), o que causa falha
+                                adquirir um bloqueio do state. O padrão é 0s (zero segundos), o que causa falha
                                 imediata se o bloqueio já estiver retido por outro processo.
                             </p>
                         </li>
@@ -549,7 +550,6 @@
                                     </p>
                                 </li>
                             </ul>
-
                         </p>
                     </li>
                 </ul>
@@ -565,9 +565,9 @@
                     API para Terraform Cloud, Terraform Enterprise ou qualquer outro host que ofereça serviços
                     Terraform.
                 </p>
-                <code>$ terraform login [hostname] </code>
-                <p>
-                    Nota: Este comando é adequado apenas para uso em cenários interativos onde é possível iniciar um
+                <pre>$ terraform login [hostname] </pre>
+                <p class="note" >
+                    NOTA: Este comando é adequado apenas para uso em cenários interativos onde é possível iniciar um
                     navegador da web no mesmo host em que o Terraform está sendo executado. Se você estiver executando o
                     Terraform em um cenário de automação autônoma, poderá configurar credenciais manualmente na
                     configuração da CLI.
@@ -602,13 +602,13 @@
                     pelo<code>terraform login </code>. Essas credenciais são tokens de API para Terraform Cloud,
                     Terraform Enterprise ou qualquer outro host que ofereça serviços Terraform.
                 </p>
-                <code>$ terraform logout [hostname] </code>
+                <pre>$ terraform logout [hostname] </pre>
                 <p>
                     Se você não fornecer um nome de host explícito, o Terraform assumirá que você deseja sair do
                     Terraform Cloud em app.terraform.io.
                 </p>
-                <p>
-                    Nota: o token da API é removido apenas do armazenamento local, não destruído no servidor remoto,
+                <p class="note" >
+                    NOTA: o token da API é removido apenas do armazenamento local, não destruído no servidor remoto,
                     portanto, permanecerá válido até ser revogado manualmente.
                 </p>
                 <p>
@@ -624,9 +624,9 @@
                 <h2><i class="fa fa-cube"></i> output</h2>
                 <p>
                     O comando <code>terraform output </code>O comando terraform output é usado para extrair o valor de
-                    uma variável de saída do arquivo de estado.
+                    uma variável de saída do arquivo do state.
                 </p>
-                <code>$ terraform output [options] [NAME] </code>
+                <pre>$ terraform output [options] [NAME] </pre>
                 <p>
                     Sem argumentos adicionais, a saída exibirá todas as saídas para o módulo raiz. Se um NAME de output
                     for especificado, apenas o valor dessa saída será impresso.
@@ -649,7 +649,7 @@
                     </li>
                     <li>
                         <p>
-                            <code>-state=path </code>Caminho para o arquivo de estado. O padrão é "terraform.tfstate".
+                            <code>-state=path </code>Caminho para o arquivo do state. O padrão é "terraform.tfstate".
                             Ignorado quando o estado remoto é usado
                         </p>
                     </li>
@@ -674,12 +674,10 @@ output "password" {
                 <p>
                     Listar todos os outputs
                 </p>
-                <code>
-                    $ terraform output
-                </code>
-                <p>Observe que as saídas com o atributo sensível serão redigidas:<code>$ terraform output password
-                        password = (sensitive) </code></p>
-                <br>
+                <pre>$ terraform output</pre>
+                <p>Observe que as saídas com o atributo sensível serão redigidas:</p>
+                    <pre>$ terraform output password password = (sensitive) </pre>
+
                 <p>
                     Para consultar o endereço DNS do balanceador de carga(Load Balancer)
                 </p>
@@ -702,9 +700,7 @@ test = [
                     Para consultar um valor específico em uma lista, use -json e um analisador de linha de comando JSON,
                     como jq*. Por exemplo, para consultar o endereço IP da primeira instância:
                 </p>
-                <code>
-                    $ terraform output -json instance_ips | jq '.value[0]'
-                </code>
+                <pre>$ terraform output -json instance_ips | jq '.value[0]'</pre>
                 <h6>*O jq é como sed para dados JSON - você pode usá-lo para cortar, filtrar, mapear e transformar dados
                     estruturados com a mesma facilidade que sed, awk, grep e etc</h6>
                 <p>Consulte Mais <a href="https://stedolan.github.io/jq/">https://stedolan.github.io/jq/</a></p>
@@ -757,6 +753,98 @@ test = [
             <div class="card">
                 <img src="" alt="">
 
+                <h2><i class="fa fa-cube"></i> resource addressing</h2>
+                <p>
+                    Um endereço de recurso é uma sequência que faz referência a um recurso específico em uma
+                    infraestrutura maior. Um endereço é composto de duas partes:
+                </p>
+                <pre>[module path][resource spec] </pre>
+                <p><strong>Module path:</strong></p>
+                <p>Um caminho de módulo aborda um módulo na árvore de módulos. Assume a forma:</p>
+                <pre>module.A.module.B.module.C...</pre>
+                <p>
+                    Vários módulos em um caminho indicam aninhamento. Se um caminho do módulo for especificado sem uma
+                    especificação de recurso, o endereço se aplicará a todos os recursos dentro do módulo. Se o caminho
+                    do módulo for omitido, isso abordará o módulo raiz.
+                </p>
+                <p><strong>Resource spec:</strong></p>
+                <p>Uma especificação de recurso aborda um recurso específico na configuração. Assume a forma:</p>
+                <pre>resource_type.resource_name[resource index]</pre>
+                <ul>
+                    <li>
+                        <p>
+                            <code>resource_type</code> Tipo do recurso que está sendo endereçado.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <code>resource_name</code> nome definido pelo usuário do recurso.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <code>[resource index]</code> um índice opcional em um recurso com várias instâncias,
+                            cercado por caracteres de colchete ([e]).
+                        </p>
+                    </li>
+                </ul>
+                <p class="note">No Terraform v0.12 e posterior, uma especificação de recurso sem um prefixo de caminho
+                    do módulo
+                    corresponde apenas aos recursos no módulo raiz. Nas versões anteriores, uma especificação de recurso
+                    sem um prefixo de caminho do módulo corresponderá aos recursos com o mesmo tipo e nome em qualquer
+                    módulo descendente.
+                </p>
+                <p><strong>Resource index:</strong></p>
+                <ul>
+                    <li>
+                        <p>
+                            <code>[N]</code> onde N é um índice numérico baseado em 0 em um recurso com várias instâncias
+                            especificadas pelo meta-argumento de contagem. Omitir um índice ao endereçar um recurso em
+                            que count> 1 significa que o endereço faz referência a todas as instâncias.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <code>["INDEX"] </code> em que INDEX é um índice de chave alfanumérica em um recurso com várias instâncias especificadas pelo meta-argumento for_each.
+                        </p>
+                    </li>
+                </ul>
+                <h3>Exemplos</h3>
+                <h4>Exemplo de Count</h4>
+                <p>Dada uma configuração do Terraform que inclui:</p>
+                <pre>
+resource "aws_instance" "web" {
+# ...
+countpre
+}                    
+                </pre>
+                <p>Um endereço como este:</p>
+                <pre>aws_instance.web[3]</pre>
+                <p>Refere-se apenas à última instância na configuração e a um endereço como este:</p>
+                <pre>aws_instance.web</pre>
+                <p>Refere-se a todas as quatro instâncias "web".</p>
+                
+                <h4>Exemplo de for_each</h4>
+                <p>Dada uma configuração do Terraform que inclui:</p>
+                <pre>
+resource "aws_instance" "web" {
+# ...
+for_each = {
+    "terraform": "value1",
+    "resource":  "value2",
+    "indexing":  "value3",
+    "example":   "value4",
+}
+}
+                </pre>
+                <p>Um endereço como este:</p>
+                <pre>aws_instance.web["example"]</pre>
+                <p>Refere-se apenas à instância "exemplo" na configuração.</p>
+            </div>
+
+            <div class="card">
+                <img src="" alt="">
+
                 <h2><i class="fa fa-cube"></i> refresh</h2>
                 <p>
                     O comando <code>terraform destroy </code>é usado para destruir a infraestrutura gerenciada pelo
@@ -803,13 +891,13 @@ test = [
 
                 <h2><i class="fa fa-cube"></i> state</h2>
                 <p>
-                    O comando <code>terraform state </code>é usado para gerenciamento avançado de estado. À medida que o
+                    O comando <code>terraform state </code>é usado para gerenciamento avançado do state. À medida que o
                     uso do Terraform se torna mais avançado, há alguns casos em que você pode precisar modificar o
                     estado do Terraform. Em vez de modificar o estado diretamente, os comandos do estado de terraform
                     podem ser usados em muitos casos.
                 </p>
-                <h3>Uso</h3>
-                <code>$ terraform state (subcomando) [options] [args] </code>
+                
+                <pre>$ terraform state (subcomando) [options] [args] </pre>
                 <p>Este comando é um subcomando aninhado, o que significa que ele possui subcomandos adicionais(Resource
                     Addressing,list,mv,pull,push,rm,show). Esses subcomandos estão listados abaixo</p>
                 <ul>
@@ -818,11 +906,9 @@ test = [
                         <p>
                             O comando terraform state list é usado para listar recursos dentro de um estado Terraform.
                         </p>
-                        <code>
-                            $ terraform state list [options] [address...]
-                        </code>
+                        <pre>$ terraform state list [options] [address...]</pre>
                         <p>
-                            O comando listará todos os recursos no arquivo de estado que correspondem aos endereços
+                            O comando listará todos os recursos no arquivo do state que correspondem aos endereços
                             fornecidos (se houver). Se nenhum endereço for fornecido, todos os recursos serão listados.
                         </p>
                         <p>
@@ -842,7 +928,7 @@ test = [
                         <ul>
                             <li>
                                 <p>
-                                    <code>-state=path </code>Caminho para o arquivo de estado. O padrão é
+                                    <code>-state=path </code>Caminho para o arquivo do state. O padrão é
                                     "terraform.tfstate". Ignorado quando o estado remoto é usado.
                                 </p>
                             </li>
@@ -890,13 +976,13 @@ module.elb.aws_security_group.sg
                             O comando <code>terraform state mv</code> é usado para mover itens em um estado Terraform.
                             Este comando
                             pode mover recursos únicos, instâncias únicas de um recurso, módulos inteiros e muito mais.
-                            Este comando também pode mover itens para um arquivo de estado completamente diferente,
+                            Este comando também pode mover itens para um arquivo do state completamente diferente,
                             permitindo refatoração eficiente.
                         </p>
-                        <code>$ terraform state mv [options] source destination</code>
+                        <pre>$ terraform state mv [options] source destination</pre>
                         <p>
                             Este comando moverá um item correspondente ao endereço fornecido para o endereço de destino.
-                            Este comando também pode ir para um endereço de destino em um arquivo de estado
+                            Este comando também pode ir para um endereço de destino em um arquivo do state
                             completamente diferente.
                         </p>
                         <p>
@@ -908,15 +994,15 @@ module.elb.aws_security_group.sg
                         <p>
                             Este comando produzirá uma cópia de backup do estado antes de salvar as alterações. O backup
                             não pode ser desativado. Devido à natureza destrutiva deste comando, são necessários
-                            backups. Se você estiver movendo um item para um arquivo de estado diferente, será criado um
-                            backup para cada arquivo de estado.
+                            backups. Se você estiver movendo um item para um arquivo do state diferente, será criado um
+                            backup para cada arquivo do state.
                         </p>
                         <p>
                             Este comando requer que um endereço de origem e destino do item seja movido. Os endereços
                             estão no formato de endereçamento de recursos.
                         </p>
                         <p>
-                            Os sinalizadores da linha de comando são todos opcionais. A lista de sinalizadores
+                            Os flags da linha de comando são todos opcionais. A lista de flags
                             disponíveis é:
                         </p>
                         <ul>
@@ -924,94 +1010,275 @@ module.elb.aws_security_group.sg
                                 <p>
                                     <code>-backup=path</code> Caminho onde o Terraform deve gravar o backup para o
                                     estado original. Isso não pode ser desativado. Se não estiver definido, o Terraform
-                                    gravará no mesmo caminho que o arquivo de estado com uma extensão ".backup".
+                                    gravará no mesmo caminho que o arquivo do state com uma extensão ".backup".
                                 </p>
                             </li>
                             <li>
                                 <p>
                                     <code>-backup-out=path</code> Caminho em que o Terraform deve gravar o backup
                                     para o estado de destino. Isso não pode ser desativado. Se não estiver definido, o
-                                    Terraform gravará no mesmo caminho que o arquivo de estado de destino com uma
+                                    Terraform gravará no mesmo caminho que o arquivo do state de destino com uma
                                     extensão de backup. Isso só precisa ser especificado se -state-out estiver definido
                                     como um caminho diferente de -state.
                                 </p>
                             </li>
                             <li>
                                 <p>
-                                    <code>-state=path</code> Caminho para o arquivo de estado de origem para leitura. O
+                                    <code>-state=path</code> Caminho para o arquivo do state de origem para leitura. O
                                     padrão é
                                     o back-end configurado ou "terraform.tfstate".
                                 </p>
                             </li>
                             <li>
                                 <p>
-                                    <code>-state-out=path</code> Caminho para o arquivo de estado de destino no qual
-                                    gravar. Se isso não for especificado, o arquivo de estado de origem será usado. Este
+                                    <code>-state-out=path</code> Caminho para o arquivo do state de destino no qual
+                                    gravar. Se isso não for especificado, o arquivo do state de origem será usado. Este
                                     pode ser um caminho novo ou existente
                                 </p>
                             </li>
                         </ul>
                         <h4>Exemplo: Renomear um Recurso</h4>
                         <p>O exemplo abaixo renomeia o recurso packet_device chamado de worker para helper:</p>
-                        <code>$ terraform state mv 'packet_device.worker' 'packet_device.helper'</code>
+                        <pre>$ terraform state mv 'packet_device.worker' 'packet_device.helper'</pre>
 
                         <h4>Exemplo: Mover um Recurso para um Módulo</h4>
                         <p>O exemplo abaixo move o recurso packet_device chamado worker para um módulo chamado app. O
                             módulo será criado se não existir.</p>
-                        <code>$ terraform state mv 'packet_device.worker' 'module.app'</code>
+                        <pre>$ terraform state mv 'packet_device.worker' 'module.app'</pre>
 
                         <h4>Exemplo: Mover um módulo para um módulo</h4>
                         <p>O exemplo abaixo move o módulo denominado app para o módulo pai.</p>
-                        <code>$ terraform state mv 'module.app' 'module.parent.module.app'</code>
+                        <pre>$ terraform state mv 'module.app' 'module.parent.module.app'</pre>
 
                         <h4>Exemplo: Mover um Módulo para Outro Estado</h4>
-                        <p>O exemplo abaixo move o módulo chamado app para outro arquivo de estado. Isso remove o módulo
-                            do arquivo de estado original e o adiciona ao destino. A origem e o destino têm o mesmo
+                        <p>O exemplo abaixo move o módulo chamado app para outro arquivo do state. Isso remove o módulo
+                            do arquivo do state original e o adiciona ao destino. A origem e o destino têm o mesmo
                             significado que mantemos o mesmo nome.</p>
-                        <code>$ terraform state mv -state-out=other.tfstate 'module.app' 'module.app'</code>
+                        <pre>$ terraform state mv -state-out=other.tfstate 'module.app' 'module.app'</pre>
 
                         <h4>Exemplo: Mover um Recurso Configurado com Contagem</h4>
                         <p>O exemplo abaixo move a primeira instância de um recurso packet_device chamado worker
                             configurado com count para a primeira instância de um recurso chamado helper também
                             configurado com count:</p>
-                        <code>$ terraform state mv 'packet_device.worker[0]' 'packet_device.helper[0]'</code>
+                        <pre>$ terraform state mv 'packet_device.worker[0]' 'packet_device.helper[0]'</pre>
 
                         <h4>Exemplo: Mover um Recurso configurado com for_each</h4>
                         <p>O exemplo abaixo move a instância "example123" de um recurso packet_device chamado worker
                             configurado com for_each para a instância "example456" de um recurso chamado helper também
                             configurando for_each:</p>
                         <p>Linux, Mac Os e UNIX:</p>
-                        <code>$ terraform state mv 'packet_device.worker["example123"]' 'packet_device.helper["example456"]'</code>
-                        <p>PowerSheel:</p>
-                        <code>$ terraform state mv 'packet_device.worker[\"example123\"]' 'packet_device.helper[\"example456\"]'</code>
+                        <pre>$ terraform state mv 'packet_device.worker["example123"]''packet_device.helper["example456"]'</pre>
+                        <p>PowerShell:</p>
+                        <pre>$ terraform state mv 'packet_device.worker[\"example123\"]''packet_device.helper[\"example456\"]'</pre>
                         <p>Windows cmd.exe:</p>
-                        <code>$ terraform state mv packet_device.worker[\"example123\"] packet_device.helper[\"example456\"]</code>
+                        <pre>$ terraform state mv packet_device.worker[\"example123\"] packet_device.helper[\"example456\"]</pre>
+                    </li>
+                    <li>
+                        <h3>pull</h3>
+                        <p>
+                            O comando <code>terraform state pull</code>é usado para baixar e emitir manualmente o estado
+                            do estado remoto. Este comando também funciona com o estado local.
+                        </p>
+                        <pre>$ terraform state pull</pre>
+                        <p>
+                            Este comando fará o download do estado de seu local atual e produzirá o formato bruto para
+                            stdout.
+                        </p>
+                        <p>
+                            Isso é útil para ler valores fora do estado (potencialmente emparelhar esse comando com algo
+                            como jq). Também é útil se você precisar fazer modificações manuais para declarar.
+                        </p>
+                    </li>
+
+                    <li>
+                        <h3>push</h3>
+                        <p>
+                            O comando <code>terraform state push</code> é usado para fazer upload manualmente de um
+                            arquivo de
+                            estado local para o estado remoto. Este comando também funciona com o estado local.Este
+                            comando raramente deve ser usado. Ele serve apenas como um utilitário, caso seja necessária
+                            intervenção manual com o estado remoto. Estado.
+                        </p>
+                        <pre>terraform state push [options] PATH</pre>
+                        <p>Este comando enviará o estado especificado por PATH para o back-end atualmente configurado.
+                        </p>
+                        <p>Se PATH for "-", os dados do estado a serem enviados serão lidos no stdin. Esses dados são
+                            carregados completamente na memória e verificados antes de serem gravados no estadpre
+                            destino.</p>
                     </li>
                     <li>
                         <p>
-
+                            O Terraform executará várias verificações de segurança para impedir que você faça alterações
+                            que parecem inseguras:
                         </p>
+                        <ul>
+                            <li>
+                                <p>
+                                    Differing lineage: se o valor da "linhagem" no estado for diferente, o Terraform não
+                                    permitirá que você der um push no state. Uma linhagem diferente sugere que os
+                                    estados são completamente diferentes e você pode perder dados.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Higher remote serial: se o valor "serial" no estado de destino for maior que o
+                                    estado que está sendo enviado, o Terraform impedirá o envio. Um serial mais alto
+                                    sugere que os dados estão no estado de destino que não são contabilizados no estado
+                                    local que está sendo enviado.
+                                </p>
+                            </li>
+                        </ul>
+                        <p> Ambas as verificações de segurança podem ser desativadas com o flag -force. Isto não
+                            é recomendado. Se você desabilitar as verificações de segurança e estiver efetuando um push
+                            no estado, o estado de destino será substituído.</p>
                     </li>
+
                     <li>
+                        <h3>rm</h3>
                         <p>
-
+                            O comando terraform state rm é usado para remover itens do estado Terraform. Este comando
+                            pode remover recursos únicos, instâncias únicas de um recurso, módulos inteiros e muito
+                            mais.
                         </p>
+                        <pre>terraform state rm [options] ADDRESS...</pre>
+                        <p>Remova um ou mais itens do Terraform state</p>
+                        <p>
+                            Itens removidos do estado Terraform não são fisicamente destruídos. Itens removidos do
+                            estado
+                            Terraform não são mais gerenciados pelo Terraform. Por exemplo, se você remover uma
+                            instância da AWS do estado, a instância da AWS continuará em execução, mas o plano de
+                            terraform não verá mais essa instância.</p>
+                        <p>
+                            Existem vários casos de uso para remover itens de um arquivo do state do Terraform. O mais
+                            comum é refatorar uma configuração para não gerenciar mais esse recurso (talvez movê-lo para
+                            outra configuração / estado do Terraform).</p>
+
+                        <p>
+                            O estado será salvo apenas na remoção bem-sucedida de todos os endereços. Se houver algum
+                            erro de endereço específico por qualquer motivo (como um erro de sintaxe), o estado não será
+                            modificado.
+                        </p>
+                        <p>
+                            Este comando produzirá uma cópia de backup do estado antes de salvar as alterações. O backup
+                            não pode ser desativado. Devido à natureza destrutiva deste comando, são necessários
+                            backups.
+                        </p>
+                        <p>
+                            Este comando requer um ou mais endereços que apontam para recursos no estado. Os endereços
+                            estão no formato de endereçamento de recursos.
+                        </p>
+                        <p>
+                            Os flags da linha de comando são todos opcionais. A lista de flags
+                            disponíveis é:
+                        </p>
+                        <ul>
+                            <li>
+                                <p>
+                                    <code>-backup=path</code> Caminho onde o Terraform deve gravar o estado do backup.
+                                    Isso não pode ser desativado. Se não estiver definido, o Terraform gravará no mesmo
+                                    caminho que o arquivo do state com uma extensão de backup.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <code>-state=path</code> Caminho para um arquivo do state do Terraform a ser usado
+                                    para procurar recursos gerenciados pelo Terraform. Por padrão, ele usará o back-end
+                                    configurado ou o "terraform.tfstate" padrão, se existir.
+                                </p>
+                            </li>
+                        </ul>
+                        <h4>Exemplo: Remover um Recurso</h4>
+                        <p>O exemplo abaixo remove o packet_device do recurso chamado worker:</p>
+                        <pre>$ terraform state rm 'packet_device.worker'</pre>
+
+                        <h4>Exemplo: Remover um Módulo</h4>
+                        <p>O exemplo abaixo remove o módulo inteiro chamado foo:</p>
+                        <pre>$ terraform state rm 'module.foo'</pre>
+
+                        <h4>Exemplo: Remover um Recurso do Módulo</h4>
+                        <p>O exemplo abaixo remove o recurso packet_device chamado worker dentro de um módulo chamado
+                            foo:</p>
+                        <pre>$ terraform state rm 'module.foo.packet_device.worker'</pre>
+
+                        <h4>Exemplo: Remover um Recurso Configurado com Contagem</h4>
+                        <p>OO exemplo abaixo remove a primeira instância de um recurso packet_device chamado worker
+                            configurado com count:</p>
+                        <pre>$ terraform state rm 'packet_device.worker[0]'</pre>
+
+                        <h4>Exemplo: Remover um Recurso configurado com for_each</h4>
+                        <p>O exemplo abaixo remove a instância "example" de um recurso packet_device chamado worker
+                            configurado com for_each:</p>
+                        <p>Linux, Mac Os e UNIX:</p>
+                        <pre>$ terraform state rm 'packet_device.worker["example"]'</pre>
+                        <p>PowerShell:</p>
+                        <pre>$ terraform state rm 'packet_device.worker[\"example\"]'</pre>
+                        <p>Windows cmd.exe:</p>
+                        <pre>$$ terraform state rm packet_device.worker[\"example\"]</pre>
                     </li>
+
                     <li>
+                        <h3>show</h3>
                         <p>
-
+                            O comando terraform state show é usado para mostrar os atributos de um único recurso no
+                            estado Terraform.
+                        </p>
+                        <pre>$ terraform state show [options] ADDRESS</pre>
+                        <p>
+                            O comando mostrará os atributos de um único recurso no arquivo do state que corresponde ao
+                            endereço fornecido.Este comando requer um endereço que aponte para um único recurso no
+                            estado. Os endereços estão no formato de endereçamento de recursos.
+                        </p>
+                        <p>
+                            Os flags da linha de comando são todos opcionais. A lista de flags
+                            disponíveis é:
+                        </p>
+                        <ul>
+                            <li>
+                                <p>
+                                    <code>-state=path</code> Caminho para o arquivo do state. O padrão é
+                                    "terraform.tfstate".
+                                    Ignorado quando o estado remoto é usado.
+                                </p>
+                            </li>
+                        </ul>
+                        <p>
+                            A saída do terraform state show destina-se ao consumo humano, não ao consumo
+                            programático. Para extrair dados do state para uso em outro software, use terraform show
+                            -json e decodifique o resultado usando a estrutura documentada.
                         </p>
                     </li>
-                    <li>
-                        <p>
 
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-
-                        </p>
-                    </li>
+                    <h4>Exemplo: Mostrar um Recurso</h4>
+                    <p>O exemplo abaixo mostra um recurso packet_device chamado worker:</p>
+                    <pre>
+$ terraform state show 'packet_device.worker'
+id                = 6015bg2b-b8c4-4925-aad2-f0671d5d3b13
+billing_cycle     = hourly
+created           = 2015-12-17T00:06:56Z
+facility          = ewr1
+hostname          = prod-xyz01
+locked            = false
+...
+                    </pre>
+                    <h4>Exemplo: Mostra um Recurso do Módulo</h4>
+                    <p>O exemplo abaixo mostra um recurso packet_device chamado worker dentro de um módulo chamado foo:
+                    </p>
+                    <pre>$ terraform state show 'module.foo.packet_device.worker'</pre>
+                    <h4>Exemplo: Mostrar um Recurso Configurado com Contagem</h4>
+                    <p>
+                        O exemplo abaixo mostra a primeira instância de um recurso packet_device chamado worker
+                        configurado com count:
+                    </p>
+                    <pre>$ terraform state show 'packet_device.worker[0]'</pre>
+                    <h4>Exemplo: Mostrar um Recurso configurado com for_each</h4>
+                    <p>O exemplo abaixo mostra a instância "example" de um recurso packet_device chamado worker
+                        configurado com for_each:</p>
+                    <p>Linux, Mac Os e UNIX:</p>
+                    <pre>$ terraform state show 'packet_device.worker["example"]'</pre>
+                    <p>PowerShell:</p>
+                    <pre>$ terraform state show 'packet_device.worker[\"example\"]'</pre>
+                    <p>Windows cmd.exe:</p>
+                    <pre>$$ terraform state show packet_device.worker[\"example\"]</pre>
                 </ul>
             </div>
 
@@ -1020,11 +1287,11 @@ module.elb.aws_security_group.sg
 
                 <h2><i class="fa fa-cube"></i> taint</h2>
                 <p>
-                    O comando <code>terraform taint </code> marca manualmente um recurso gerenciado pelo Terraform como
+                    O comando <code>terraform taint </code> - marca manualmente um recurso gerenciado pelo Terraform como
                     tainted, forçando-o a ser destruído e recriado na próxima aplicação.
                 </p>
                 <p>
-                    Este comando não modifica a infraestrutura, mas modifica o arquivo de estado para marcar um recurso
+                    Este comando não modifica a infraestrutura, mas modifica o arquivo do state para marcar um recurso
                     como tainted. Depois que um recurso é marcado como tainted, o próximo plano mostrará que o
                     recurso será destruído e recriado e a próxima aplicação implementará essa alteração.
                 </p>
@@ -1041,7 +1308,7 @@ module.elb.aws_security_group.sg
                     O comando plan mostrará isso se for esse o caso.
                 </p>
 
-                <code>$ terraform taint [options] address </code>
+                <pre>$ terraform taint [options] address </pre>
 
                 <p>
                     O argumento de endereço é o endereço do recurso a ser marcado como tainted. O endereço está na
@@ -1082,18 +1349,18 @@ module.elb.aws_security_group.sg
                             extensão ".backup". Desativado configurando para "-".</p>
                     </li>
                     <li>
-                        <p><code>-lock=true </code>Bloqueia o arquivo de estado quando o bloqueio for suportado.</p>
+                        <p><code>-lock=true </code>Bloqueia o arquivo do state quando o bloqueio for suportado.</p>
                     </li>
                     <li>
-                        <p><code>-lock-timeout=0s </code>Duração para tentar novamente um bloqueio de estado.</p>
+                        <p><code>-lock-timeout=0s </code>Duração para tentar novamente um bloqueio do state.</p>
                     </li>
                     <li>
-                        <p><code>-state=path </code>Caminho para ler e gravar o arquivo de estado. O padrão é
+                        <p><code>-state=path </code>Caminho para ler e gravar o arquivo do state. O padrão é
                             "terraform.tfstate". Ignorado quando o estado remoto é usado.</p>
                     </li>
                     <li>
-                        <p><code>-state-out=path </code>Caminho para gravar o arquivo de estado atualizado. Por padrão,
-                            o caminho <code>-state</code> será usado. Ignorado quando o estado remoto é usado.</p>
+                        <p><code>-state-out=path </code>Caminho para gravar o arquivo do state atualizado. Por padrão,
+                            o caminho <code>-state</code> - será usado. Ignorado quando o estado remoto é usado.</p>
                     </li>
                 </ul>
                 <h5>Exemplo: Marcando(Tainting) um recurso único</h5>
@@ -1132,7 +1399,7 @@ Resource instance module.child.module.grandchild.aws_instance.example[2] has bee
 
                 <h2><i class="fa fa-cube"></i> validate</h2>
                 <p>
-                    O comando<code>terraform validate </code> valida os arquivos de configuração em um diretório,
+                    O comando<code>terraform validate </code> - valida os arquivos de configuração em um diretório,
                     referindo-se apenas
                     à configuração e não acessando nenhum serviço remoto, como estado remoto, APIs do provedor etc.</p>
 
@@ -1148,7 +1415,7 @@ Resource instance module.child.module.grandchild.aws_instance.example[2] has bee
                 <p>A validação requer um diretório de trabalho inicializado com todos os plugins e módulos referenciados
                     instalados. Para inicializar um diretório ativo para validação sem acessar nenhum back-end remoto
                     configurado, use:</p>
-                <code>$ terraform init -backend=false </code>
+                <pre>$ terraform init -backend=false </pre>
                 <p>
                     Se dir não for especificado, o diretório atual será usado.
                 </p>
@@ -1157,7 +1424,7 @@ Resource instance module.child.module.grandchild.aws_instance.example[2] has bee
                     destino específico, valores variáveis de entrada etc.), use o comando terraform plan, que inclui uma
                     verificação implícita de validação.
                 </p>
-                <code>terraform validate [options] [dir] </code>
+                <pre>terraform validate [options] [dir] </pre>
 
                 <p>
                     Por padrão,<code>validate </code> não requer flags e procura no diretório atual as configurações.
@@ -1194,9 +1461,9 @@ Resource instance module.child.module.grandchild.aws_instance.example[2] has bee
                         taint </code> manual
                     ou o resultado de falha dos provisionadores em um recurso.
                 </p>
-                <p>
+                <p class="note" >
 
-                    NOTA sobre índices tainted: Em certos casos extremos, mais de uma instância tainted pode estar
+                    NOTA: Sobre índices tainted: Em certos casos extremos, mais de uma instância tainted pode estar
                     presente para um único recurso. Quando isso acontece, você precisa especificar o índice após os
                     recursos, por exemplo meu-recurso-exemplo [2]. Você pode usar o comando terraform show para
                     inspecionar
@@ -1205,10 +1472,10 @@ Resource instance module.child.module.grandchild.aws_instance.example[2] has bee
                     casos, haverá apenas uma instância tainted e o flag -index pode ser omitido.</p>
 
                 <p>
-                    Este comando não modifica a infraestrutura, mas modifica o arquivo de estado para desmarcar um
+                    Este comando não modifica a infraestrutura, mas modifica o arquivo do state para desmarcar um
                     recurso como tainted.
                 </p>
-                <code>$ terraform untaint [options] name </code>
+                <pre>$ terraform untaint [options] name </pre>
                 <p>
                     O argumento <code>name </code> é o nome do recurso a ser marcado como untainted. O formato desse
                     argumento é TYPE.NAME, como <code>aws_instance.foo </code>.
@@ -1234,7 +1501,7 @@ Resource instance module.child.module.grandchild.aws_instance.example[2] has bee
                     </li>
                     <li>
                         <p>
-                            <code>-lock=true </code> Bloqueia o arquivo de estado quando o bloqueio é suportado.
+                            <code>-lock=true </code> Bloqueia o arquivo do state quando o bloqueio é suportado.
                         </p>
                     </li>
                     <li>
@@ -1257,13 +1524,13 @@ Resource instance module.child.module.grandchild.aws_instance.example[2] has bee
                     </li>
                     <li>
                         <p>
-                            <code>-state=path </code> Caminho para ler e gravar o arquivo de estado. O padrão é
+                            <code>-state=path </code> Caminho para ler e gravar o arquivo do state. O padrão é
                             <code>"terraform.tfstate" </code>. Ignorado quando o estado remoto é usado.
                         </p>
                     </li>
                     <li>
                         <p>
-                            <code>-state-out=path </code> Caminho para gravar o arquivo de estado atualizado. Por
+                            <code>-state-out=path </code> Caminho para gravar o arquivo do state atualizado. Por
                             padrão,
                             o caminho -state será usado. Ignorado quando o estado remoto é usado.
                         </p>
@@ -1283,13 +1550,13 @@ Resource instance module.child.module.grandchild.aws_instance.example[2] has bee
                     Este comando é um contêiner para subcomandos adicionais. Esses subcomandos
                     <code>list,select,new,delete e show </code> estão listados abaixo.
                 </p>
-                <code>$ terraform workspace subcommand [options] [args] </code>
+                <pre>$ terraform workspace subcommand [options] [args] </pre>
                 <ul>
                     <li>
                         <h5>list</h5>
                         <p>O<code>terraform workspace list </code>é usado para listar todos os espaços de
                             trabalho(workspace) existentes.</p>
-                        <code>$ terraform workspace list </code>
+                        <pre>$ terraform workspace list </pre>
                         <p>O comando listará todos os espaços de trabalho existentes. O espaço de trabalho atual é
                             indicado usando um marcador de asterisco (*).</p>
                         <p>Exemplo</p>
@@ -1305,7 +1572,7 @@ Resource instance module.child.module.grandchild.aws_instance.example[2] has bee
                         <h5>select</h5>
                         <p>O comando<code>terraform workspace select </code>é usado para escolher um espaço de trabalho
                             diferente para usar em outras operações.</p>
-                        <code>$ terraform workspace select [NAME] </code>
+                        <pre>$ terraform workspace select [NAME] </pre>
                         <p>Este comando selecionará outro espaço de trabalho. O espaço de trabalho nomeado já deve
                             existir.</p>
                         <p>Exemplo</p>
@@ -1319,11 +1586,11 @@ Resource instance module.child.module.grandchild.aws_instance.example[2] has bee
     Switched to workspace "default"
                 </pre>
                     </li>
-
+                    <li>
                     <h5>new</h5>
                     <p>O comando<code>terraform workspace new </code> é usado para criar um novo espaço de trabalho..
                     </p>
-                    <code>$ terraform workspace new [NAME] </code>
+                    <pre>$ terraform workspace new [NAME] </pre>
                     <p>Este comando criará um novo espaço de trabalho com o nome fornecido. Um espaço de trabalho com
                         esse nome ainda não deve existir.Se o flag<code>-state </code> for fornecido, o estado
                         especificado pelo caminho especificado será copiado para inicializar o estado para este novo
@@ -1331,12 +1598,12 @@ Resource instance module.child.module.grandchild.aws_instance.example[2] has bee
                     <p>Os flags da linha de comando são todos opcionais. O único flag suportado é:</p>
                     <ul>
                         <li>
-                            <p><code>state=path </code> Caminho para um arquivo de estado para inicializar o estado
+                            <p><code>state=path </code> Caminho para um arquivo do state para inicializar o estado
                                 deste
                                 ambiente.</p>
                         </li>
                     </ul>
-
+                </li>
                     <p>Exemplo:</p>
                     <pre>
     $ terraform workspace new example
@@ -1347,7 +1614,7 @@ Resource instance module.child.module.grandchild.aws_instance.example[2] has bee
     for this configuration.
 </pre>
                     <p>Exemplo com Estado:</p>
-                    <p>Para criar um novo espaço de trabalho a partir de um arquivo de estado local preexistente:</p>
+                    <p>Para criar um novo espaço de trabalho a partir de um arquivo do state local preexistente:</p>
                     <pre>
     $ terraform workspace new -state=old.terraform.tfstate example
     Created and switched to workspace "example".
@@ -1362,7 +1629,7 @@ Resource instance module.child.module.grandchild.aws_instance.example[2] has bee
                         <h5>delete</h5>
                         <p>O<code>terraform workspace delete </code>é usado para deletar um espaço de
                             trabalho(workspace) existente.</p>
-                        <code>$ terraform workspace delete [NAME] </code>
+                        <pre>$ terraform workspace delete [NAME] </pre>
                         <p>O comando deletará o workspace especificado.</p>
                         <p>Para excluir um espaço de trabalho, ele já deve existir, deve ter um estado vazio e não deve
                             ser seu espaço de trabalho atual. Se o estado da área de trabalho não estiver vazio, o
@@ -1392,7 +1659,7 @@ Resource instance module.child.module.grandchild.aws_instance.example[2] has bee
                     <li>
                         <h5>show</h5>
                         <p>O<code>terraform workspace show </code>é usado para gerar o espaço de trabalho atual</p>
-                        <code>$ terraform workspace show </code>
+                        <pre>$ terraform workspace show </pre>
                         <p>O comando exibirá o espaço de trabalho atual</p>
                         <p>Exemplo</p>
                         <pre>
